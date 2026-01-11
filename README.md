@@ -1,8 +1,8 @@
 ## Table of Contents:
 
-- [Repo Guidelines]([url])
-- [Repo Navigation]([url])
-- [Other Information ]([url])
+- [Repo Guidelines]([url](https://github.com/UBC-Rocket/ulysses-simulation/blob/main/README.md#repo-guidelines))
+- [Repo Navigation]([url](https://github.com/UBC-Rocket/ulysses-simulation/blob/main/README.md#repo-navigation))
+- [Other Information ]([url](https://github.com/UBC-Rocket/ulysses-simulation/blob/main/README.md#other-information))
 
 <hr>
 
