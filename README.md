@@ -1,8 +1,8 @@
 ## Table of Contents:
 
-- [Repo Guidelines]([url](https://ubcrocket.atlassian.net/wiki/x/SYB2Bw))
-- [Repo Navigation]([url](https://ubcrocket.atlassian.net/wiki/x/SYB2Bw))
-- [Other Information ]([url](https://ubcrocket.atlassian.net/wiki/x/SYB2Bw))
+- [Repo Guidelines]([url])
+- [Repo Navigation]([url])
+- [Other Information ]([url])
 
 <hr>
 
