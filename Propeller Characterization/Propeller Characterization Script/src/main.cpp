@@ -36,26 +36,26 @@ void stop();
 
 void setup() {
  Serial.begin(9600);
- Serial.println("Motor Calibration Experiment");
+ Serial.println("#Motor Calibration Experiment");
 
  // Load Cell Calibration
 
  scale1.begin(DOUT1, CLK1);
  scale1.set_scale(calibration_factor_1); //This value is obtained by using the SparkFun_HX711_Calibration sketch
  scale1.tare(); //Assuming there is no weight on the scale at start up, reset the scale to 0
- Serial.println("scale 1 tare done");
+ Serial.println("#scale 1 tare done");
 
  scale2.begin(DOUT2, CLK2);
  scale2.set_scale(calibration_factor_2); //This value is obtained by using the SparkFun_HX711_Calibration sketch
  scale2.tare(); //Assuming there is no weight on the scale at start up, reset the scale to 0
- Serial.println("scale 2 tare done");
+ Serial.println("#scale 2 tare done");
 
  scale3.begin(DOUT3, CLK3);
  scale3.set_scale(calibration_factor_3); //This value is obtained by using the SparkFun_HX711_Calibration sketch
  scale3.tare(); //Assuming there is no weight on the scale at start up, reset the scale to 0
- Serial.println("scale 3 tare done");
+ Serial.println("#scale 3 tare done");
 
- Serial.println("Readings:");
+ Serial.println("#Readings:");
 
  //Esc initialization
  pinMode(9, OUTPUT);
@@ -68,8 +68,9 @@ void setup() {
  ESCp.writeMicroseconds(1000);
 
  delay(10000); // Wait 10 seconds for ESC to initialize
-}
 
+ Serial.println("pulsep,pulsen,f1,f2,f3");  // CSV header only
+}
 
 void loop() {
  unsigned long now = millis();
@@ -91,7 +92,7 @@ void loop() {
     }
 
     if(pulsep >= maxPulse && pulsen >= maxPulse){
-      Serial.print("Experiment Stopped");
+      Serial.print("#Experiment Stopped");
       stop();
     }
   }
@@ -99,22 +100,16 @@ void loop() {
 
 }
 
-
-
 void printVals(){
- Serial.print("Throttle p:");
- Serial.print((pulsep-1000)/10);
- Serial.print("Throttle n:");
- Serial.print((pulsen-1000)/10);
-
- Serial.print("Load cell Reading: ");
- Serial.print(scale1.get_units(), 3); //scale.get_units() returns a float
- Serial.print(" lbs, "); //You can change this to kg but you'll need to refactor the calibration_factor
- Serial.print(scale2.get_units(), 3); //scale.get_units() returns a float
- Serial.print(" lbs, "); //You can change this to kg but you'll need to refactor the calibration_factor
- Serial.print(scale3.get_units(), 3); //scale.get_units() returns a float
- Serial.print(" lbs"); //You can change this to kg but you'll need to refactor the calibration_factor
- Serial.println();
+ Serial.print(pulsep);
+ Serial.print(",");
+ Serial.print(pulsen);
+ Serial.print(",");
+ Serial.print(scale1.get_units(), 3);
+ Serial.print(",");
+ Serial.print(scale2.get_units(), 3);
+ Serial.print(",");
+ Serial.println(scale3.get_units(), 3);
 }
 
 void stop(){
