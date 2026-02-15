@@ -1,4 +1,5 @@
 #include "esc_motor.h"
+#include <stddef.h>
 
 /* ---- helpers ---- */
 

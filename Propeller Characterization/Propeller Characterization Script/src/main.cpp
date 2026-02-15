@@ -18,7 +18,6 @@ HX711 scale2;
 ESC ESCp(9, 1000, 2000);  // Esc for the motor in the positive roll axis (motor p)
 ESC ESCn(10, 1000, 2000); // Esc for the motor in the negative roll axis (motor n)
 
-
 // Sweep variables initialization
 unsigned long lastStep = 0;
 const unsigned long stepTime = 500;
