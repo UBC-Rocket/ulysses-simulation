@@ -120,28 +120,28 @@ void loop()
     // ── Original sweep logic (uncomment to auto-sweep) ──
     // Sweeps pulsep from 1000 to maxPulse in steps of pulseStep.
     // When pulsep reaches maxPulse, resets pulsep to 1000 and increments pulsen.
-    // Stops when both reach maxPulse.
+    // Stops when pulsen exceeds maxPulse.
     //
     // if (now - lastStep >= stepTime) {
     //     lastStep = now;
     //
-    //     ESCp.writeMicroseconds(pulsep);
+    //     ESCp.setVal(pulsep);
     //
     //     printLoadCells();
     //
     //     pulsep += pulseStep;
     //
-    //     if (pulsep >= maxPulse) {
+    //     if (pulsep > maxPulse) {
     //         pulsep = 1000;
-    //         ESCp.writeMicroseconds(1000);
+    //         ESCp.setVal(1000);
     //
     //         pulsen += pulseStep;
-    //         ESCn.writeMicroseconds(pulsen);
-    //     }
-    //
-    //     if (pulsep >= maxPulse && pulsen >= maxPulse) {
-    //         Serial.println("#Experiment Stopped");
-    //         stop();
+    //         if (pulsen > maxPulse) {
+    //             ESCn.setVal(1000);
+    //             Serial.println("#Experiment Stopped");
+    //             stop();
+    //         }
+    //         ESCn.setVal(pulsen);
     //     }
     // }
 }

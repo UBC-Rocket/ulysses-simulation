@@ -1,11 +1,14 @@
 import serial
 import time
+from datetime import datetime
 
 ser = serial.Serial('COM5', 9600, timeout=1)
 time.sleep(2)
 
+outfile = f"sweep_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}.csv"
+
 try:
-    with open("thrust_test.csv", "w") as f:
+    with open(outfile, "w") as f:
         while True:
             line = ser.readline().decode(errors="ignore").strip()
             if line:
@@ -16,4 +19,4 @@ except KeyboardInterrupt:
     print("\nLogging stopped by user.")
 finally:
     ser.close()
-    print("Log saved to thrust_test.csv")
+    print(f"Log saved to {outfile}")

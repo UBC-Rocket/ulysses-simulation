@@ -1,4 +1,4 @@
-"""PlatformIO extra script: launches logger.py automatically after firmware upload.
+"""PlatformIO extra script: launches manual_logger.py automatically after firmware upload.
 
 Added to platformio.ini via:
     extra_scripts = post:post_upload.py
@@ -15,17 +15,12 @@ import time
 def after_upload(source, target, env):
     """Called by PlatformIO after the upload target completes."""
     project_dir = env.subst("$PROJECT_DIR")
-    logger_path = os.path.join(project_dir, "logger.py")
-
-    # Prefer the upload port; fall back to monitor port or auto-detect.
-    port = env.subst("$UPLOAD_PORT") or env.subst("$MONITOR_PORT") or ""
+    logger_path = os.path.join(project_dir, "manual_logger.py")
 
     # Brief delay so the ESP32 finishes its reset after upload.
     time.sleep(2)
 
     cmd = [sys.executable, logger_path]
-    if port:
-        cmd += ["--port", port]
 
     print(f"\n>>> Starting logger: {' '.join(cmd)}\n")
     try:
