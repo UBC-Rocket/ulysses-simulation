@@ -1,120 +1,85 @@
 #pragma once
+
 #include <Arduino.h>
-#include <Servo.h>
 #include <esc_motor.h>
+#include <string.h>
 
-// class ESC{
-//     private:
-//     Servo Esc;
-//     int val = 1000;
-
-//     int pin; //Initialization Values
-//     int minv;
-//     int maxv;
-//     bool initialized = 0;
-
-//     public:
-//     explicit ESC(int _pin, int _min, int _max):pin(_pin), minv(_min), maxv(_max){}
-
-//     bool init(){
-//         pinMode(pin, OUTPUT);
-//         Esc.attach(pin, minv, maxv);
-//         Esc.writeMicroseconds(val);
-//         initialized = 1;
-//         return true;
-//     }
-
-//     void setVal(int _val){
-//         if (!initialized){return;}
-//         val = _val;
-//         Esc.writeMicroseconds(val);
-//     }
-
-//     void incrementVal(int inc){
-//         setVal(val+inc);
-//     }
-//     int getVal(){
-//         if (!initialized){return;}
-//         return val;
-//     }
-//     void stop(){
-//         setVal(1000);
-//     }
-// };
+#if defined(ARDUINO_ARCH_ESP32) && __has_include(<ESP32Servo.h>)
+#include <ESP32Servo.h>
+#else
+#include <Servo.h>
+#endif
 
 class ESC {
-    private:
-    Servo driver;       // The actual Arduino driver
-    esc_motor_t motor;  // The C-struct holding the state
+  private:
+    Servo driver;
+    esc_motor_t motor;
+    int val;
+    int pin;
+    int minv;
+    int maxv;
 
-    public:
-    // Constructor: Initialize the C-struct fields
-    explicit ESC(int _pin, int _min_us, int _max_us) {
-        // Zero out the struct first (good practice)
+    static int clampInt(int v, int lo, int hi) {
+        if (v < lo) return lo;
+        if (v > hi) return hi;
+        return v;
+    }
+
+  public:
+    explicit ESC(int _pin, int _min_us, int _max_us)
+        : val(_min_us), pin(_pin), minv(_min_us), maxv(_max_us) {
         memset(&motor, 0, sizeof(esc_motor_t));
-
-        // Map Inputs to Struct
-        motor.channel = _pin;       // We use 'channel' to store the Arduino Pin
-        motor.us_min = _min_us;
-        motor.us_max = _max_us;
-        
-        // specific defaults
-        motor.us_target = 1000;
-        motor.us_output = 1000;
-        motor.armed = false;
-
-        // IMPORTANT: Link the C struct 'hw' pointer to our C++ Servo object
-        // This allows C functions to potentially access the driver if cast back
-        motor.hw = (void*)&driver; 
     }
 
     bool init() {
-        // Use the struct data to attach the servo
-        // Note: .hw needs to be cast back to Servo* to be used, 
-        // but here we just use the member 'driver' directly.
-        uint8_t pin = (uint8_t)motor.channel;
-        
-        driver.attach(pin, motor.us_min, motor.us_max);
-        
-        // Set initial state
-        motor.armed = true;
-        setVal(motor.us_min); // Start at 0 throttle
-        
-        return true;
+#if defined(ARDUINO_ARCH_ESP32)
+        driver.setPeriodHertz(ESC_PWM_FREQ_HZ);
+#endif
+        driver.attach(pin, minv, maxv);
+        if (!driver.attached()) {
+            return false;
+        }
+        esc_motor_init(&motor, &driver, (uint32_t)pin);
+        motor.us_min = (uint16_t)minv;
+        motor.us_max = (uint16_t)maxv;
+        esc_motor_arm(&motor, millis());
+        val = minv;
+        return motor.armed;
     }
 
-    void setVal(int _us_target) {
-        if (!motor.armed) return;
+    void setVal(int us) {
+        val = clampInt(us, minv, maxv);
+        esc_motor_set_us(&motor, (uint16_t)val, millis());
+    }
 
-        // 1. Update Target
-        motor.us_target = _us_target;
-        motor.last_cmd_ms = millis(); // Track when we last got a command
-
-        // 2. Safety Clamp (using struct limits)
-        if (motor.us_target < motor.us_min) motor.us_target = motor.us_min;
-        if (motor.us_target > motor.us_max) motor.us_target = motor.us_max;
-
-        // 3. Write to Hardware
-        motor.us_output = motor.us_target;
-        driver.writeMicroseconds(motor.us_output);
+    void setPct(float pct) {
+        if (pct < 0.0f) pct = 0.0f;
+        if (pct > 100.0f) pct = 100.0f;
+        esc_motor_set_throttle_pct(&motor, pct, millis());
+        float us = (float)minv + (pct * 0.01f) * (float)(maxv - minv);
+        val = clampInt((int)(us + 0.5f), minv, maxv);
     }
 
     void incrementVal(int inc) {
-        // Use the current target from the struct as the base
-        setVal(motor.us_target + inc);
+        setVal(val + inc);
     }
 
     int getVal() {
-        if (!motor.armed) return 0;
-        return motor.us_output;
+        return val;
+    }
+
+    void update() {
+        uint32_t now = millis();
+        esc_motor_set_us(&motor, (uint16_t)val, now);
+        esc_motor_update(&motor, now);
+    }
+
+    bool isArmed() const {
+        return motor.armed;
     }
 
     void stop() {
-        setVal(motor.us_min); // Use the struct's defined minimum
-    }
-
-    // Helper: Expose the raw struct in case C functions need it
-    esc_motor_t* getRawState() {
-        return &motor;
+        val = minv;
+        esc_motor_disarm(&motor);
     }
 };

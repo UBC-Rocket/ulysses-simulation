@@ -28,20 +28,18 @@ void esc_motor_init(esc_motor_t *m, void *hw, uint32_t channel) {
     m->hw      = hw;
     m->channel = channel;
 
-    m->us_min    = ESC_PWM_PERIOD_MIN_US;
-    m->us_max    = ESC_PWM_PERIOD_MAX_US;
+    m->us_min    = ESC_PULSE_MIN_US;
+    m->us_max    = ESC_PULSE_MAX_US;
     m->us_target = m->us_min;
     m->us_output = m->us_min;
     m->armed     = false;
     m->last_cmd_ms = 0U;
-
-    write_us(m, m->us_min);
 }
 
 void esc_motor_arm(esc_motor_t *m, uint32_t now_ms) {
     if (m == NULL) return;
 
-    esc_hw_start_pwm(m->hw, m->channel);
+    if (!esc_hw_start_pwm(m->hw, m->channel)) return;
 
     m->armed       = true;
     m->last_cmd_ms = now_ms;
@@ -55,6 +53,7 @@ void esc_motor_disarm(esc_motor_t *m) {
     m->armed     = false;
     m->us_target = m->us_min;
     write_us(m, m->us_min);
+    esc_hw_stop_pwm(m->hw, m->channel);
 }
 
 void esc_motor_set_throttle_pct(esc_motor_t *m, float pct, uint32_t now_ms) {
@@ -62,7 +61,13 @@ void esc_motor_set_throttle_pct(esc_motor_t *m, float pct, uint32_t now_ms) {
     if (pct < 0.0f)   pct = 0.0f;
     if (pct > 100.0f)  pct = 100.0f;
 
-    uint16_t us = pct_to_us(m->us_min, m->us_max, pct);
+    m->us_target   = pct_to_us(m->us_min, m->us_max, pct);
+    m->last_cmd_ms = now_ms;
+    write_us(m, m->us_target);
+}
+
+void esc_motor_set_us(esc_motor_t *m, uint16_t us, uint32_t now_ms) {
+    if (m == NULL || !m->armed) return;
 
     m->us_target   = clamp_us(us, m->us_min, m->us_max);
     m->last_cmd_ms = now_ms;
@@ -86,6 +91,7 @@ void esc_motor_update(esc_motor_t *m, uint32_t now_ms) {
             m->armed     = false;
             m->us_target = m->us_min;
             write_us(m, m->us_min);
+            esc_hw_stop_pwm(m->hw, m->channel);
             return;
         }
     }
