@@ -2,4 +2,6 @@
 
 slprj/
 
+*.slx.original
+*.slx.autosave
 *.slxc
