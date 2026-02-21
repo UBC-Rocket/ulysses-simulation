@@ -1,3 +1,7 @@
 .mypy_cache
 
 slprj/
+
+*.slx.original
+*.slx.autosave
+*.slxc
