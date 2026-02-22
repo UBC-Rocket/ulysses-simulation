@@ -55,18 +55,18 @@ void stop();
 
 void setup()
 {
-    Serial.begin(9600);
+    Serial.begin(115200);
     Serial.println("#Motor Calibration Experiment");
 
     // Load Cell Calibration
 
     scale1.begin(DOUT1, CLK1);
-    scale1.set_scale(calibration_factor_1); // This value is obtained by using the SparkFun_HX711_Calibration sketch
+    scale1.set_scale(-22000/50); // This value is obtained by using the SparkFun_HX711_Calibration sketch
     scale1.tare();                          // Assuming there is no weight on the scale at start up, reset the scale to 0
     Serial.println("#scale 1 tare done");
 
     scale2.begin(DOUT2, CLK2);
-    scale2.set_scale(calibration_factor_2); // This value is obtained by using the SparkFun_HX711_Calibration sketch
+    scale2.set_scale(-21000/50); // This value is obtained by using the SparkFun_HX711_Calibration sketch
     scale2.tare();                          // Assuming there is no weight on the scale at start up, reset the scale to 0
     Serial.println("#scale 2 tare done");
 
@@ -94,7 +94,7 @@ void setup()
 
     Serial.println("#Readings:");
 
-    Serial.println("time_ms,throttle_pct,pulsep,pulsen,f1,f2,vbat1,vbat2,vbat3,vbat_avg"); // CSV header
+    Serial.println("time_ms,throttle_pct,pulsep,pulsen,f1,f2,vbat1,vbat2,vbat3,vbat_tot"); // CSV header
 }
 
 void loop()
@@ -148,29 +148,33 @@ void loop()
 
 void printLoadCells()
 {
-    Serial.print(millis());
-    Serial.print(",");
-    Serial.print(throttlePct, 1);
-    Serial.print(",");
-    Serial.print(ESCp.getVal());
-    Serial.print(",");
-    Serial.print(ESCn.getVal());
-    Serial.print(",");
-    double scale1_val = -348.415*scale1.get_units()-27.146; // Convert to Newtons (negative sign accounts for load cell orientation)
+    //Serial.print(millis());
+    //Serial.print(",");
+    //Serial.print(throttlePct, 1);
+    //Serial.print(",");
+    //Serial.print(ESCp.getVal());
+    //Serial.print(",");
+    //Serial.print(ESCn.getVal());
+    //Serial.print(",");
+    double scale1_val = scale1.get_units() * 1; // Convert to Newtons (negative sign accounts for load cell orientation)
     Serial.print(scale1_val, 3);
     Serial.print(",");
-    double scale2_val = -348.415*scale2.get_units(); // Convert to Newtons (negative sign accounts for load cell orientation)
-    Serial.print(scale2_val, 3);
-    Serial.print(",");
-    Serial.print((analogRead(VBAT1_PIN) - analogRead(VBAT2_PIN)) * ADC_TO_V * 4.2, 3);
-    Serial.print(",");
-    Serial.print((analogRead(VBAT2_PIN) - analogRead(VBAT3_PIN)) * ADC_TO_V * 4.2, 3);
-    Serial.print(",");
-    Serial.print(analogRead(VBAT3_PIN) * ADC_TO_V * 4.2, 3);
-    Serial.print(",");
-    Serial.println((analogRead(VBAT1_PIN) * ADC_TO_V * 4.2)/3.0, 3);
+    double scale2_val = scale2.get_units() * 1; // Convert to Newtons (negative sign accounts for load cell orientation)
+    Serial.println(scale2_val, 3);
+    //Serial.print(",");
+    //Serial.print((analogRead(VBAT1_PIN) * 4.267 - analogRead(VBAT2_PIN) * 4.243) * ADC_TO_V, 3);
+    //Serial.print(",");
+    //Serial.print((analogRead(VBAT2_PIN) * 4.243 - analogRead(VBAT3_PIN) * 4.252) * ADC_TO_V, 3);
+    //Serial.print(",");
+    //Serial.print(analogRead(VBAT3_PIN) * ADC_TO_V * 4.252, 3);
+    //Serial.print(",");
+    //Serial.println((analogRead(VBAT1_PIN) * ADC_TO_V * 4.267) / 3.0, 3);
 }
 
+
+/*
+
+*/
 void readSerialThrottle()
 {
     if (!Serial.available()) return;
