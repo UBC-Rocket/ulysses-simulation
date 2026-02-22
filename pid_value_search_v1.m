@@ -1,0 +1,62 @@
+
+
+% PID Value Search for the 4 PID controllers 
+
+% PID Tuning Setup
+controllerType = 'PID';
+targetPM = 50;
+targetBW = 1;
+opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'balanced');  
+
+
+
+
+%run('model_datafile.m');
+
+% Axial PID Controllers - ZYX, Thrust - T
+warning('off','all');
+
+
+% Simulink File
+modelFile = 'root';
+
+% Check if model is open
+if ~bdIsLoaded(modelFile)
+    load_system(modelFile);
+end
+
+
+% Pull I/Os from the model - Double Check Before Running!!!
+Z.io(1) = linio('root/Z_ang', 1, 'input');
+Y.io(1) = linio('root/Y_ang', 1, 'input');
+X.io(1) = linio('root/X_ang', 1, 'input');
+T.io(1) = linio('root/Z_body', 1, 'input');
+
+Z.io(2) = linio('root/Demux2', 1, 'output');
+Y.io(2) = linio('root/Demux2', 2, 'output');
+X.io(2) = linio('root/Demux2', 3, 'output');
+T.io(2) = linio('root/Demux', 3, 'output');
+
+
+% Linearize each system
+Z.sys = linearize(modelFile, Z.io);
+Y.sys = linearize(modelFile, Y.io);
+X.sys = linearize(modelFile, X.io);
+T.sys = linearize(modelFile, T.io);
+
+
+% Convert to s-domain transfer function
+Z.G = tf(Z.sys); Z.G = minreal(Z.G);
+Y.G = tf(Y.sys); Y.G = minreal(Y.G);
+X.G = tf(X.sys); X.G = minreal(X.G);
+T.G = tf(T.sys); T.G = minreal(T.G);
+
+
+% Tune Controllers
+[Z.C, Z.info] = pidtune(Z.G, controllerType, targetBW, opts);
+[Y.C, Y.info] = pidtune(Y.G, controllerType, targetBW, opts);
+[X.C, X.info] = pidtune(X.G, controllerType, targetBW, opts);
+[T.C, T.info] = pidtune(T.G, controllerType, targetBW, opts);
+
+
+Ks = [Z.C; Y.C; X.C; T.C];
