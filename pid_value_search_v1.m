@@ -1,4 +1,15 @@
+
+
 % PID Value Search for the 4 PID controllers 
+
+% PID Tuning Setup
+controllerType = 'PID';
+targetPM = 50;
+targetBW = 1;
+opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'balanced');  
+
+
+
 
 %run('model_datafile.m');
 
@@ -15,7 +26,7 @@ if ~bdIsLoaded(modelFile)
 end
 
 
-% Pull I/Os from the model
+% Pull I/Os from the model - Double Check Before Running!!!
 Z.io(1) = linio('root/Z_ang', 1, 'input');
 Y.io(1) = linio('root/Y_ang', 1, 'input');
 X.io(1) = linio('root/X_ang', 1, 'input');
@@ -41,5 +52,11 @@ X.G = tf(X.sys); X.G = minreal(X.G);
 T.G = tf(T.sys); T.G = minreal(T.G);
 
 
+% Tune Controllers
+[Z.C, Z.info] = pidtune(Z.G, controllerType, targetBW, opts);
+[Y.C, Y.info] = pidtune(Y.G, controllerType, targetBW, opts);
+[X.C, X.info] = pidtune(X.G, controllerType, targetBW, opts);
+[T.C, T.info] = pidtune(T.G, controllerType, targetBW, opts);
 
 
+Ks = [Z.C; Y.C; X.C; T.C];
