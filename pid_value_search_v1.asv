@@ -1,15 +1,24 @@
 
-
+% when in doubt use 1 0.01 0.001
 % PID Value Search for the 4 PID controllers 
+
+% RESET because the tuning builds off of previous state
+%{
+Z.C.Kp = 1; Z.C.Ki = 0.01; Z.C.Kd = 0.001; 
+X.C = Z.C; Y.C = Z.C; T.C = Z.C;
+%}
 
 % PID Tuning Setup
 controllerType = 'PID';
-targetPM = 69;
-targetBW = ;
+targetPM = 70 - 1;
+targetBW = 10.05;
 opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'balanced');  
 
-targetPM_t = 60;
-targetBW_t = 0.8;
+targetPM_t = 65;
+targetBW_t = 2.2;
+
+% PM 70, BW 0.05, PMt 65, BWt 2.3 gives insane roll on an angle, and not
+% enough thrust
 opts_t = pidtuneOptions('PhaseMargin', targetPM_t, 'DesignFocus', 'balanced');
 
 %run('model_datafile.m');
