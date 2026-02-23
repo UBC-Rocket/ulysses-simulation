@@ -19,14 +19,14 @@ smiData.RigidTransform(58).ID = "";
 
 %Translation Method - Cartesian
 %Rotation Method - Arbitrary Axis
-smiData.RigidTransform(1).translation = [0.0056729292114099938 0.026501455377039018 0.045524499325409862];  % m
+smiData.RigidTransform(1).translation = [0.0056729292114099938 0.026501455377039074 0.045524499325409834];  % m
 smiData.RigidTransform(1).angle = 0;  % rad
 smiData.RigidTransform(1).axis = [0 0 0];
 smiData.RigidTransform(1).ID = "B[Mid Assembly 2.0.STEP-1:-:STEP Proppulsion Assembly.STEP-1]";
 
 %Translation Method - Cartesian
 %Rotation Method - Arbitrary Axis
-smiData.RigidTransform(2).translation = [0.034656588158096406 0.037919633817078066 0.026233982337000153];  % m
+smiData.RigidTransform(2).translation = [0.034656588158095095 0.037919633817092284 0.026233982336987018];  % m
 smiData.RigidTransform(2).angle = 2.0943951023931953;  % rad
 smiData.RigidTransform(2).axis = [0.57735026918962618 0.57735026918962562 0.5773502691896254];
 smiData.RigidTransform(2).ID = "F[Mid Assembly 2.0.STEP-1:-:STEP Proppulsion Assembly.STEP-1]";
@@ -40,7 +40,7 @@ smiData.RigidTransform(3).ID = "B[STEP Top Assembly.STEP-1:-:Mid Assembly 2.0.ST
 
 %Translation Method - Cartesian
 %Rotation Method - Arbitrary Axis
-smiData.RigidTransform(4).translation = [-0.034452070788589605 0.026501455377057087 0.034780582480813615];  % m
+smiData.RigidTransform(4).translation = [-0.034452070788589605 0.026501455377038956 0.034780582480834973];  % m
 smiData.RigidTransform(4).angle = 2.0943951023931948;  % rad
 smiData.RigidTransform(4).axis = [-0.57735026918962606 -0.57735026918962562 0.57735026918962562];
 smiData.RigidTransform(4).ID = "F[STEP Top Assembly.STEP-1:-:Mid Assembly 2.0.STEP-1]";
@@ -397,21 +397,21 @@ smiData.RigidTransform(54).ID = "AssemblyGround[Mid Assembly 2.0.STEP-1:DS3218 D
 
 %Translation Method - Cartesian
 %Rotation Method - Arbitrary Axis
-smiData.RigidTransform(55).translation = [-0.0045770707885899875 0.0065014553770390004 0.034716887480834957];  % m
+smiData.RigidTransform(55).translation = [-0.0045770707885899875 0.006501455377039056 0.034716887480834957];  % m
 smiData.RigidTransform(55).angle = 0;  % rad
 smiData.RigidTransform(55).axis = [0 0 0];
 smiData.RigidTransform(55).ID = "AssemblyGround[Mid Assembly 2.0.STEP-1:Servo 2 Connector.STEP-1]";
 
 %Translation Method - Cartesian
 %Rotation Method - Arbitrary Axis
-smiData.RigidTransform(56).translation = [0.023086097838741021 0.0082140551261269956 0.026233982336986983];  % m
+smiData.RigidTransform(56).translation = [0.023086097838740993 0.0082140551261269401 0.026233982336986983];  % m
 smiData.RigidTransform(56).angle = 0;  % rad
 smiData.RigidTransform(56).axis = [0 0 0];
 smiData.RigidTransform(56).ID = "AssemblyGround[STEP Proppulsion Assembly.STEP-1:Motor Stand.STEP-1]";
 
 %Translation Method - Cartesian
 %Rotation Method - Arbitrary Axis
-smiData.RigidTransform(57).translation = [0.025646098290692004 -0.048785944873872999 0.026733982788938015];  % m
+smiData.RigidTransform(57).translation = [0.025646098290691977 -0.048785944873873111 0.02673398278893796];  % m
 smiData.RigidTransform(57).angle = 2.0943951023931957;  % rad
 smiData.RigidTransform(57).axis = [0.57735026918962573 0.57735026918962562 -0.57735026918962573];
 smiData.RigidTransform(57).ID = "AssemblyGround[STEP Proppulsion Assembly.STEP-1:CRM2413.STEP-1]";
