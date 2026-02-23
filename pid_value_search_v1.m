@@ -4,12 +4,13 @@
 
 % PID Tuning Setup
 controllerType = 'PID';
-targetPM = 50;
-targetBW = 1;
+targetPM = 69;
+targetBW = 9;
 opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'balanced');  
 
-
-
+targetPM_t = 60;
+targetBW_t = 0.8;
+opts_t = pidtuneOptions('PhaseMargin', targetPM_t, 'DesignFocus', 'balanced');
 
 %run('model_datafile.m');
 
@@ -56,7 +57,7 @@ T.G = tf(T.sys); T.G = minreal(T.G);
 [Z.C, Z.info] = pidtune(Z.G, controllerType, targetBW, opts);
 [Y.C, Y.info] = pidtune(Y.G, controllerType, targetBW, opts);
 [X.C, X.info] = pidtune(X.G, controllerType, targetBW, opts);
-[T.C, T.info] = pidtune(T.G, controllerType, targetBW, opts);
+[T.C, T.info] = pidtune(T.G, controllerType, targetBW_t, opts_t);
 
 
-Ks = [Z.C; Y.C; X.C; T.C];
+
