@@ -5,8 +5,8 @@
 
 % PID Tuning Setup
 controllerType = 'PID';
-targetPM = 70;
-targetBW = 10;
+targetPM = 65;
+targetBW = 12;
 opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'balanced');  
 
 targetPM_t = 65;
