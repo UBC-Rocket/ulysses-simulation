@@ -5,12 +5,12 @@
 
 % PID Tuning Setup
 controllerType = 'PID';
-targetPM = 80;
-targetBW = 1;
+targetPM = 70;
+targetBW = 10;
 opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'balanced');  
 
-targetPM_t = 80;
-targetBW_t = 1;
+targetPM_t = 65;
+targetBW_t = 10;
 
 % PM 70, BW 0.05, PMt 65, BWt 2.3 gives insane roll on an angle, and not
 % enough thrust
@@ -63,10 +63,7 @@ T.G = tf(T.sys); T.G = minreal(T.G);
 [X.C, X.info] = pidtune(X.G, controllerType, targetBW, opts);
 [T.C, T.info] = pidtune(T.G, controllerType, targetBW_t, opts_t);
 
-Z.C
-Y.C
-X.C
-T.C
-
-
-
+[Z.C.Kp, Z.C.Ki, Z.C.Kd]
+[Y.C.Kp, Y.C.Ki, Y.C.Kd]
+[X.C.Kp, X.C.Ki, X.C.Kd]
+[T.C.Kp, T.C.Ki, T.C.Kd]
