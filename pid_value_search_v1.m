@@ -5,16 +5,15 @@
 
 % PID Tuning Setup
 controllerType = 'PID';
-targetPM = 65;
+targetPM = 75;
 targetBW = 12;
-opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'balanced');  
+opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'reference-tracking');  
 
 targetPM_t = 65;
 targetBW_t = 10;
 
-% PM 70, BW 0.05, PMt 65, BWt 2.3 gives insane roll on an angle, and not
-% enough thrust
-opts_t = pidtuneOptions('PhaseMargin', targetPM_t, 'DesignFocus', 'balanced');
+
+opts_t = pidtuneOptions('PhaseMargin', targetPM_t, 'DesignFocus', 'reference-tracking');
 
 %run('model_datafile.m');
 
@@ -30,6 +29,7 @@ if ~bdIsLoaded(modelFile)
     load_system(modelFile);
 end
 
+op = operpoint(modelFile);
 
 % Pull I/Os from the model - Double Check Before Running!!!
 Z.io(1) = linio('root/Z_ang', 1, 'input');
