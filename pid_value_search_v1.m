@@ -1,24 +1,19 @@
 
-% when in doubt use 1 0.01 0.001
 % PID Value Search for the 4 PID controllers 
 
-% RESET because the tuning builds off of previous state
-%{
-Z.C.Kp = 1; Z.C.Ki = 0.01; Z.C.Kd = 0.001; X.C = Z.C; Y.C = Z.C; T.C = Z.C;
-%}
+
 
 % PID Tuning Setup
 controllerType = 'PID';
-targetPM = 70 - 0.01;
-targetBW = 10 - 0.01;
-opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'balanced');  
+targetPM = 75;
+targetBW = 12;
+opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'reference-tracking');  
 
-targetPM_t = 65 + 0.01;
-targetBW_t = 2.2 + 0.1;
+targetPM_t = 65;
+targetBW_t = 10;
 
-% PM 70, BW 0.05, PMt 65, BWt 2.3 gives insane roll on an angle, and not
-% enough thrust
-opts_t = pidtuneOptions('PhaseMargin', targetPM_t, 'DesignFocus', 'balanced');
+
+opts_t = pidtuneOptions('PhaseMargin', targetPM_t, 'DesignFocus', 'reference-tracking');
 
 %run('model_datafile.m');
 
@@ -34,6 +29,7 @@ if ~bdIsLoaded(modelFile)
     load_system(modelFile);
 end
 
+op = operpoint(modelFile);
 
 % Pull I/Os from the model - Double Check Before Running!!!
 Z.io(1) = linio('root/Z_ang', 1, 'input');
@@ -67,5 +63,7 @@ T.G = tf(T.sys); T.G = minreal(T.G);
 [X.C, X.info] = pidtune(X.G, controllerType, targetBW, opts);
 [T.C, T.info] = pidtune(T.G, controllerType, targetBW_t, opts_t);
 
-
-
+[Z.C.Kp, Z.C.Ki, Z.C.Kd]
+[Y.C.Kp, Y.C.Ki, Y.C.Kd]
+[X.C.Kp, X.C.Ki, X.C.Kd]
+[T.C.Kp, T.C.Ki, T.C.Kd]
