@@ -38,13 +38,13 @@ const unsigned long sampleTime = 50; // 20 Hz load cell reads
 float throttlePct = 0.0f;
 
 // ── Original sweep logic (1000–2000 µs, step 100) ──
-// Sweeps every combination of throttle between the 2 motors.
-// unsigned long lastStep = 0;
-// const unsigned long stepTime = 500;
-// int maxPulse = 1800;
-// int pulsep = 1000;
-// int pulsen = 1000;
-// int pulseStep = 100;
+ //Sweeps every combination of throttle between the 2 motors.
+ unsigned long lastStep = 0;
+ const unsigned long stepTime = 2000;
+ int maxPulse = 1500;
+ int pulsep = 1000;
+ int pulsen = 1000;
+ int pulseStep = 100;
 
 // ADC -> voltage conversion (ESP32: 12-bit, 3.3V ref)
 const float ADC_TO_V = 3.3f / 4095.0f;
@@ -61,12 +61,12 @@ void setup()
     // Load Cell Calibration
 
     scale1.begin(DOUT1, CLK1);
-    scale1.set_scale(-22000/50); // This value is obtained by using the SparkFun_HX711_Calibration sketch
+    scale1.set_scale(22000/50); // This value is obtained by using the SparkFun_HX711_Calibration sketch
     scale1.tare();                          // Assuming there is no weight on the scale at start up, reset the scale to 0
     Serial.println("#scale 1 tare done");
 
     scale2.begin(DOUT2, CLK2);
-    scale2.set_scale(-21000/50); // This value is obtained by using the SparkFun_HX711_Calibration sketch
+    scale2.set_scale(21000/50); // This value is obtained by using the SparkFun_HX711_Calibration sketch
     scale2.tare();                          // Assuming there is no weight on the scale at start up, reset the scale to 0
     Serial.println("#scale 2 tare done");
 
@@ -99,6 +99,7 @@ void setup()
 
 void loop()
 {
+    /*
     // Read throttle from serial if available
     readSerialThrottle();
 
@@ -116,65 +117,80 @@ void loop()
         lastSample = now;
         printLoadCells();
     }
+    */
 
     // ── Original sweep logic (uncomment to auto-sweep) ──
     // Sweeps pulsep from 1000 to maxPulse in steps of pulseStep.
     // When pulsep reaches maxPulse, resets pulsep to 1000 and increments pulsen.
     // Stops when pulsen exceeds maxPulse.
     //
-    // if (now - lastStep >= stepTime) {
-    //     lastStep = now;
-    //
-    //     ESCp.setVal(pulsep);
-    //
-    //     printLoadCells();
-    //
-    //     pulsep += pulseStep;
-    //
-    //     if (pulsep > maxPulse) {
-    //         pulsep = 1000;
-    //         ESCp.setVal(1000);
-    //
-    //         pulsen += pulseStep;
-    //         if (pulsen > maxPulse) {
-    //             ESCn.setVal(1000);
-    //             Serial.println("#Experiment Stopped");
-    //             stop();
-    //         }
-    //         ESCn.setVal(pulsen);
-    //     }
-    // }
+
+    unsigned long now = millis();
+     if (now - lastStep >= stepTime) {
+         lastStep = now;
+/*
+            ESCp.setVal(1000);
+            ESCn.setVal(1000);
+
+            
+            delay(500);
+            
+            scale1.tare();
+            scale2.tare();
+
+            ESCp.setVal(pulsep);
+            ESCn.setVal(pulsen);
+
+*/
+    
+         ESCp.setVal(pulsep);
+    
+         delay(500);
+         printLoadCells();
+    
+         pulsep += pulseStep;
+    
+         if (pulsep > maxPulse) {
+             pulsep = 1000;
+             ESCp.setVal(1000);
+    
+             pulsen += pulseStep;
+             if (pulsen > maxPulse) {
+                 ESCn.setVal(1000);
+                 Serial.println("#Experiment Stopped");
+                 stop();
+             }
+             ESCn.setVal(pulsen);
+         }
+     }
 }
 
 void printLoadCells()
 {
-    //Serial.print(millis());
-    //Serial.print(",");
-    //Serial.print(throttlePct, 1);
-    //Serial.print(",");
-    //Serial.print(ESCp.getVal());
-    //Serial.print(",");
-    //Serial.print(ESCn.getVal());
-    //Serial.print(",");
-    double scale1_val = scale1.get_units() * 1; // Convert to Newtons (negative sign accounts for load cell orientation)
+    Serial.print(millis());
+    Serial.print(",");
+    Serial.print(throttlePct, 1);
+    Serial.print(",");
+    Serial.print(ESCp.getVal());
+    Serial.print(",");
+    Serial.print(ESCn.getVal());
+    Serial.print(",");
+    double scale1_val = scale1.get_units(); // Convert to Newtons (negative sign accounts for load cell orientation)
     Serial.print(scale1_val, 3);
     Serial.print(",");
-    double scale2_val = scale2.get_units() * 1; // Convert to Newtons (negative sign accounts for load cell orientation)
-    Serial.println(scale2_val, 3);
-    //Serial.print(",");
-    //Serial.print((analogRead(VBAT1_PIN) * 4.267 - analogRead(VBAT2_PIN) * 4.243) * ADC_TO_V, 3);
-    //Serial.print(",");
-    //Serial.print((analogRead(VBAT2_PIN) * 4.243 - analogRead(VBAT3_PIN) * 4.252) * ADC_TO_V, 3);
-    //Serial.print(",");
-    //Serial.print(analogRead(VBAT3_PIN) * ADC_TO_V * 4.252, 3);
-    //Serial.print(",");
-    //Serial.println((analogRead(VBAT1_PIN) * ADC_TO_V * 4.267) / 3.0, 3);
+    double scale2_val = scale2.get_units(); // Convert to Newtons (negative sign accounts for load cell orientation)
+    Serial.print(scale2_val, 3);
+    Serial.print(",");
+    Serial.print((analogRead(VBAT1_PIN) * 4.267 - analogRead(VBAT2_PIN) * 4.243) * ADC_TO_V, 3);
+    Serial.print(",");
+    Serial.print((analogRead(VBAT2_PIN) * 4.243 - analogRead(VBAT3_PIN) * 4.252) * ADC_TO_V, 3);
+    Serial.print(",");
+    Serial.print(analogRead(VBAT3_PIN) * ADC_TO_V * 4.252, 3);
+    Serial.print(",");
+    Serial.println((analogRead(VBAT1_PIN) * ADC_TO_V * 4.267) / 3.0, 3);
 }
 
 
-/*
-
-*/
 void readSerialThrottle()
 {
     if (!Serial.available()) return;

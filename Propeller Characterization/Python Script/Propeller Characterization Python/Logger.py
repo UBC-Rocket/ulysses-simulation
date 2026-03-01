@@ -1,11 +1,11 @@
 import serial
 import time
 
-ser = serial.Serial('COM5', 9600, timeout = 1)
+ser = serial.Serial('COM6', 115200, timeout = 1)
 time.sleep(2)
 
 try:
-    with open("thrust_test.csv", "w") as f:
+    with open("thrust_test1_propp.csv", "w") as f:
         while True:
             line = ser.readline().decode(errors="ignore").strip()
             if line:
