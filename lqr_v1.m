@@ -37,8 +37,7 @@ io(5) = linio('Copy_of_root/Multibody Sim', 6, 'output'); %l_gim
 sys = linearize(modelFile, io); % Not using an op
 
 G = tf(sys); % Transfer Function
-H = [sys.A -sys.B*(R\sys.B')
-    -Q -sys.A']; % Hamiltonian matrix assuming that N = 0
+
 
 
 
@@ -47,8 +46,9 @@ m = size(sys.B, 2);   % number of inputs
 
 Q = diag(ones(n,1)); 
 R = 0.1*eye(m); 
-
-[K, P, E] = lqr(sys, Q, R);
+H = [sys.A -sys.B*(R\sys.B')
+    -Q -sys.A']; % Hamiltonian matrix assuming that N = 0
+[K, S, E] = lqr(sys, Q, R);
 
 disp(K);
 
