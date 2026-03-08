@@ -49,9 +49,30 @@ float throttlePct = 0.0f;
 // ADC -> voltage conversion (ESP32: 12-bit, 3.3V ref)
 const float ADC_TO_V = 3.3f / 4095.0f;
 
+// Counter for the tachs
+volatile int pulseCount1 = 0;
+volatile int pulseCount2 = 0;
+
+// last sample time
+unsigned long tachLastSampleMs = 0;
+
+// rpm values for the two propellers
+float rpm1 = 0.0f;
+float rpm2 = 0.0f;
+
+
 void printLoadCells();
 void readSerialThrottle();
 void stop();
+void read_rpm();
+
+// ISR for tach
+void IRAM_ATTR tachISR1(){
+    pulseCount1++;
+};
+void IRAM_ATTR tachISR2(){
+    pulseCount2++;
+};
 
 void setup()
 {
@@ -90,7 +111,18 @@ void setup()
         stop();
     }
 
+
     delay(10000); // Wait 10 seconds for ESC to initialize
+    
+    // setup tach interrupts
+    pinMode(TACH1_PIN, INPUT_PULLUP);
+    pinMode(TACH2_PIN, INPUT_PULLUP);
+    pinMode(LED1_PIN, OUTPUT);
+    pinMode(LED2_PIN, OUTPUT);
+    attachInterrupt(digitalPinToInterrupt(TACH1_PIN), tachISR1, FALLING);
+    attachInterrupt(digitalPinToInterrupt(TACH2_PIN), tachISR2, FALLING);
+    
+    tachLastSampleMs = millis(); // update tach last sample time at setup to make sure the first vlaue read is good
 
     Serial.println("#Readings:");
 
@@ -124,7 +156,8 @@ void loop()
     // When pulsep reaches maxPulse, resets pulsep to 1000 and increments pulsen.
     // Stops when pulsen exceeds maxPulse.
     //
-
+    
+/*
     unsigned long now = millis();
      if (now - lastStep >= stepTime) {
          lastStep = now;
@@ -142,11 +175,11 @@ void loop()
             ESCn.setVal(pulsen);
 
 */
-    
+    /*
          ESCp.setVal(pulsep);
     
-         delay(500);
-         printLoadCells();
+         //delay(500);
+         //printLoadCells();
     
          pulsep += pulseStep;
     
@@ -163,6 +196,12 @@ void loop()
              ESCn.setVal(pulsen);
          }
      }
+    */
+    
+     read_rpm();
+
+     delay(10);
+
 }
 
 void printLoadCells()
@@ -188,6 +227,8 @@ void printLoadCells()
     Serial.print(analogRead(VBAT3_PIN) * ADC_TO_V * 4.252, 3);
     Serial.print(",");
     Serial.println((analogRead(VBAT1_PIN) * ADC_TO_V * 4.267) / 3.0, 3);
+    Serial.print(rpm1);
+    Serial.print(rpm2);
 }
 
 
@@ -198,7 +239,7 @@ void readSerialThrottle()
     String input = Serial.readStringUntil('\n');
     input.trim();
     float val = input.toFloat();
-
+ 
     if (val < 0.0f) val = 0.0f;
     if (val > 100.0f) val = 100.0f;
 
@@ -206,6 +247,43 @@ void readSerialThrottle()
     Serial.print("#Throttle set to ");
     Serial.print(throttlePct, 1);
     Serial.println("%");
+}
+
+void read_rpm(){
+    // sample the propeller with a window greater than 100ms
+     unsigned long nowTach = millis();
+     unsigned long tach_sample_time_ms = nowTach - tachLastSampleMs;
+     
+     if(tach_sample_time_ms >= 100){
+        noInterrupts();
+        int c1 = pulseCount1;
+        int c2 = pulseCount2;
+        pulseCount1 = 0;
+        pulseCount2 = 0;
+        interrupts();
+
+        tachLastSampleMs = nowTach;
+
+        rpm1 = (c1 * 60000.0f) / tach_sample_time_ms;
+        rpm2 = (c2 * 60000.0f) / tach_sample_time_ms;
+     }
+     /*
+     Serial.print(digitalRead(TACH1_PIN));
+     Serial.print(", ");
+     Serial.println(digitalRead(TACH2_PIN));
+     */
+
+     digitalWrite(LED1_PIN, digitalRead(TACH1_PIN));
+     digitalWrite(LED2_PIN, digitalRead(TACH2_PIN));
+
+     /*
+    int p1 = pulseCount1;
+    int p2 = pulseCount2;
+     Serial.printf("p1: %d ", p1);
+     Serial.printf("p2: %d\n", p2);
+     Serial.printf("rpm1: %f ", rpm1);
+     Serial.printf("rpm2: %f\n", rpm2);
+     */
 }
 
 void stop()
