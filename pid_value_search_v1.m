@@ -5,14 +5,21 @@
 
 % PID Tuning Setup
 controllerType = 'PID';
-targetPM = 75;
-targetBW = 12;
-opts = pidtuneOptions('PhaseMargin', targetPM, 'DesignFocus', 'reference-tracking');  
 
-targetPM_t = 65;
-targetBW_t = 10;
+targetPM_z = 55;
+targetBW_z = 7;
+opts_z = pidtuneOptions('PhaseMargin', targetPM_z, 'DesignFocus', 'reference-tracking');  
 
+targetPM_y = 55;
+targetBW_y = 6;
+opts_y = pidtuneOptions('PhaseMargin', targetPM_y, 'DesignFocus', 'reference-tracking');  
 
+targetPM_x = 55;
+targetBW_x = 6;
+opts_x = pidtuneOptions('PhaseMargin', targetPM_x, 'DesignFocus', 'reference-tracking');  
+
+targetPM_t = 45;
+targetBW_t = 5;
 opts_t = pidtuneOptions('PhaseMargin', targetPM_t, 'DesignFocus', 'reference-tracking');
 
 %run('model_datafile.m');
@@ -58,9 +65,9 @@ T.G = tf(T.sys); T.G = minreal(T.G);
 
 
 % Tune Controllers
-[Z.C, Z.info] = pidtune(Z.G, controllerType, targetBW, opts);
-[Y.C, Y.info] = pidtune(Y.G, controllerType, targetBW, opts);
-[X.C, X.info] = pidtune(X.G, controllerType, targetBW, opts);
+[Z.C, Z.info] = pidtune(Z.G, controllerType, targetBW_z, opts_z);
+[Y.C, Y.info] = pidtune(Y.G, controllerType, targetBW_y, opts_y);
+[X.C, X.info] = pidtune(X.G, controllerType, targetBW_x, opts_x);
 [T.C, T.info] = pidtune(T.G, controllerType, targetBW_t, opts_t);
 
 [Z.C.Kp, Z.C.Ki, Z.C.Kd]

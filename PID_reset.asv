@@ -1,5 +1,44 @@
 % Use when tuning starts going nowhere
-Z.C.Kp = 3.5e4; Z.C.Ki = 0.4e4; Z.C.Kd = 5e4; 
-Y.C.Kp = 2.2e2; Y.C.Ki = 2e2; Y.C.Kd = 5e2; 
-X.C.Kp = 1.65e2; X.C.Ki = 2e2; X.C.Kd = 4e2; 
-T.C.Kp = 3.2e4; T.C.Ki = 0.3e4; T.C.Kd = 5e4; 
+Z.C.Kp = 0.5; Z.C.Ki = 0.0025; Z.C.Kd = 0.0005; 
+Y.C.Kp = 0.3; Y.C.Ki = 0.0025; Y.C.Kd = 0.0015; 
+X.C.Kp = 0.3; X.C.Ki = 0.0025; X.C.Kd = 0.0005; 
+T.C.Kp = 0.2; T.C.Ki = 0.0025; T.C.Kd = 0.00005; 
+
+%{
+
+Good Set:
+
+Z.C.Kp = 0.01; Z.C.Ki = 0; Z.C.Kd = 0.001; 
+Y.C.Kp = 0.18; Y.C.Ki = 0; Y.C.Kd = 0.001; 
+X.C.Kp = 0.15; X.C.Ki = 0; X.C.Kd = 0.001; 
+T.C.Kp = 0.2; T.C.Ki = 0.001; T.C.Kd = 0.0001; 
+%}
+
+
+%{
+
+pid_value_search_v1
+[Z.C.Kp, Z.C.Ki, Z.C.Kd] = 1.0e+08 *[-1.2555   -0.1099   -3.5870]
+
+[Y.C.Kp, Y.C.Ki, Y.C.
+ans =
+
+   1.0e+03 *
+
+   -2.6554   -0.2324   -7.5867
+
+
+ans =
+
+   1.0e+04 *
+
+   -3.3199   -0.2905   -9.4852
+
+
+ans =
+
+   1.0e+09 *
+
+    1.5213    0.1331    4.3464
+
+%}
