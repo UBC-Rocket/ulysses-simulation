@@ -633,3 +633,5 @@ smiData.RevoluteJoint(1).ID = "[Mid Assembly 2.0.STEP-1:-:STEP Proppulsion Assem
 smiData.RevoluteJoint(2).Rz.Pos = 59.682989297251773;  % deg
 smiData.RevoluteJoint(2).ID = "[STEP Top Assembly.STEP-1:-:Mid Assembly 2.0.STEP-1]";
 
+INERTIA = [0.001352, 0, 0; 0, 0.001047, 0; 0, 0, 0.001378];
+ROCKET_MASS = 0.7706;
