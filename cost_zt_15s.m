@@ -1,4 +1,4 @@
-function J = cost_zt(x, model)
+function J = cost_zt_15s(x, model)
 % cost_zt — GA cost function for 12-parameter joint PID optimization
 %
 % x = [KpT KiT KdT  KpX KiX KdX  KpY KiY KdY  KpZ KiZ KdZ]
@@ -23,7 +23,7 @@ function J = cost_zt(x, model)
         simIn = simIn.setVariable('Y', Y);
         simIn = simIn.setVariable('X', X);
         simIn = simIn.setVariable('T', T);
-        simIn = simIn.setModelParameter('StopTime', '10');
+        simIn = simIn.setModelParameter('StopTime', '15');
 
         simOut = sim(simIn);
         logs   = simOut.logsout;
@@ -97,7 +97,7 @@ function J = cost_zt(x, model)
 
         penalty = 0;
         if max(abs(zp)) > 100, penalty = penalty + 1e6; end
-        if min(zp)      < -30, penalty = penalty + 1e6; end
+        if min(zp)      < -40, penalty = penalty + 1e6; end
         if max(wmag)    > 150, penalty = penalty + 1e6; end
         if mean(eq_att) > 0.6, penalty = penalty + 1e6; end
 
