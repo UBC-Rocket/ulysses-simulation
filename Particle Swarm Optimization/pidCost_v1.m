@@ -1,3 +1,28 @@
+function cost = pidCost_v1(gains, stopTime)
+    simIn = Simulink.SimulationInput('root.slx');
+    simIn = simIn.setModelParameter('StopTime', num2str(stopTime));
+
+    % Set gains for X axis PID controller
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'P', num2str(gains(1)))
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'I', num2str(gains(2)))
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'D', num2str(gains(3)))
+
+    % Run simulation
+    try
+        simOut = sim(simIn)
+    catch
+        cost = 1e6
+        return;
+    end
+
+    % Extract signals (via named outports)
+    err = simOut.yout.getElement('X_err').Values
+    t   = err.Time;
+
+    % Compute cost
+    cost = trapz(t, err.Data.^2);  % ISE with correct time vector
+end
+%{
 function cost = pidCost_v1(gains, modelName, stopTime)
     simIn = Simulink.SimulationInput(modelName);
     simIn = simIn.setModelParameter('StopTime', num2str(stopTime));
@@ -40,3 +65,5 @@ function cost = pidCost_v1(gains, modelName, stopTime)
     
     cost = ise + effort_penalty + saturation_penalty;
 end
+
+%}
