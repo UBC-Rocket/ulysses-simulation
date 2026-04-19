@@ -1,9 +1,27 @@
 % Use when tuning starts going nowhere
-Z.C.Kp = 0.5; Z.C.Ki = 0.0025; Z.C.Kd = 0.0005; 
-Y.C.Kp = 0.3; Y.C.Ki = 0.0025; Y.C.Kd = 0.0015; 
-X.C.Kp = 0.3; X.C.Ki = 0.0025; X.C.Kd = 0.0005; 
-T.C.Kp = 0.2; T.C.Ki = 0.0025; T.C.Kd = 0.00005; 
+Z.C.Kp = 0.00245; Z.C.Ki = 0.00612; Z.C.Kd = 0.00250; 
+Y.C.Kp = 0.34743; Y.C.Ki = 0.01867; Y.C.Kd = 0.00300; 
+X.C.Kp = 0.53550; X.C.Ki = 0.03137; X.C.Kd = 0.00325; 
+T.C.Kp = 0.18390; T.C.Ki = 0.01970; T.C.Kd = 0.03439; 
 
+%     0.2405         0    0.0024    0.1180         0    0.0392    0.2047         0    0.0476    0.2497    0.0858    0.0069
+
+%Inner Loop Attitude PID:
+
+%T (Thrust): Kp=
+% 0.18390, Ki=0.01970, Kd=0.03439
+%X (Roll): Kp=0.53550, Ki=0.03137, Kd=0.00325
+%Y (Pitch): Kp=0.34743, Ki=0.01867, Kd=0.00300
+%Z (Yaw): Kp=0.00245, Ki=0.00612, Kd=0.00250
+%{
+Feedforward Torque Compensation:
+
+TAU_COMP = [0; -0.020; 0] Nm
+Compensates Avionics Bay CoM offset (x=+4.8mm, z=+21.3mm)
+Outer Position Loop:
+
+Kp=0.200, Ki=0.050, Kd=0.050, output saturation ±5°, LPF cutoff 0.5 Hz
+%}
 %{
 
 Good Set:

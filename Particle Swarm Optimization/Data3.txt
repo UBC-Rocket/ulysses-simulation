@@ -1,0 +1,1 @@
+docker run --rm --shm-size=512M matlab-sim:R2023b -batch "ver"

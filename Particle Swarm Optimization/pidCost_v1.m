@@ -3,67 +3,49 @@ function cost = pidCost_v1(gains, stopTime)
     simIn = simIn.setModelParameter('StopTime', num2str(stopTime));
 
     % Set gains for X axis PID controller
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'P', num2str(gains(1)))
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'I', num2str(gains(2)))
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'D', num2str(gains(3)))
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'P', num2str(gains(1)));
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'I', num2str(gains(2)));
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'D', num2str(gains(3)));
+
+    % Set gains for Y axis PID controller
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Y', 'P', num2str(gains(4)));
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Y', 'I', num2str(gains(5)));
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Y', 'D', num2str(gains(6)));
+
+    % Set gains for Z axis PID controller
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Z', 'P', num2str(gains(7)));
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Z', 'I', num2str(gains(8)));
+    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Z', 'D', num2str(gains(9)));
+
+    % Set gains for Z Position axis PID controller
+    simIn = setBlockParameter(simIn, 'thrust_control/PID Thrust', 'P', num2str(gains(10)));
+    simIn = setBlockParameter(simIn, 'thrust_control/PID Thrust', 'I', num2str(gains(11)));
+    simIn = setBlockParameter(simIn, 'thrust_control/PID Thrust', 'D', num2str(gains(12)));
 
     % Run simulation
     try
-        simOut = sim(simIn)
+        simOut = sim(simIn);
     catch
-        cost = 1e6
+        cost = 1e6;
         return;
     end
 
     % Extract signals (via named outports)
-    err = simOut.yout.getElement('X_err').Values
-    t   = err.Time;
+    err_X = simOut.yout.signals(1).values;
+    err_Y = simOut.yout.signals(2).values;
+    err_Z = simOut.yout.signals(3).values;
+    err_Z_pos = simOut.yout.signals(4).values;
 
-    % Compute cost
-    cost = trapz(t, err.Data.^2);  % ISE with correct time vector
-end
-%{
-function cost = pidCost_v1(gains, modelName, stopTime)
-    simIn = Simulink.SimulationInput(modelName);
-    simIn = simIn.setModelParameter('StopTime', num2str(stopTime));
-    
-    
-    % PID X
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'P', num2str(gains(1)));
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'I', num2str(gains(2)));
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID X', 'D', num2str(gains(3)));
-    
-    % PID Y
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Y', 'P', num2str(gains(4)));
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Y', 'I', num2str(gains(5)));
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Y', 'D', num2str(gains(6)));
-    
-    % PID Z
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Z', 'P', num2str(gains(7)));
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Z', 'I', num2str(gains(8)));
-    simIn = setBlockParameter(simIn, 'torque_control/Torque PD/PID Z', 'D', num2str(gains(9)));
-    
-    % PID T
-    simIn = setBlockParameter(simIn, 'thrust_control/PID Thrust', 'P', num2str(gains(10)));
-    simIn = setBlockParameter(simIn, 'thrust_control/PID Thrust', 'I', num2str(gains(11)));
-    simIn = setBlockParameter(simIn, 'thrust_control/PID Thrust', 'D', num2str(gains(12)));
-    
-    % Enable Fast Restart outside loop for repeated runs
-    simOut = sim(simIn);
-    
-    % Error signals
-    err_X   = simOut.get('torque_control/Torque PD/Demux1').Values.Data;    
-    err_Y  = simOut.get('torque_control/Torque PD/Demux1/Y_err').Values.Data;
-    err_Z    = simOut.get('torque_control/Torque PD/Demux1/Z_err').Values.Data;
-    err_Z_pos = simOut.get('thrust_control/Sum/Z_pos_err').Values.Data;
-    
-    u_total = simOut.get('control_effort_vector').Values.Data;  % Or sum individual efforts
-    
-    ise = trapz(err_X.^2) + trapz(err_Y.^2) + trapz(err_Z.^2) + 5*trapz(err_Z_pos.^2);  % Higher weight on height if critical
-    effort_penalty = 0.01 * trapz(sum(abs(u_total).^2, 2));      % Total control effort
-    saturation_penalty = 500 * sum(any(abs(u_total) > your_sat_limits, 1));  % Heavy penalty for vectoring/prop saturation
-    
-    cost = ise + effort_penalty + saturation_penalty;
-end
 
-%}
+    t   = simOut.yout.time;
+
+    % Compute the ISE for each of the error values 
+    ise_X = trapz(t, err_X.^2);
+    ise_Y = trapz(t, err_Y.^2);
+    ise_Z = trapz(t, err_Z.^2);
+    ise_Z_pos = trapz(t, err_Z_pos.^2);
+    
+    ise_cost = ise_X + ise_Y + ise_Z + ise_Z_pos;
+    cost = ise_cost;
+
+end

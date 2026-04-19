@@ -3,47 +3,26 @@ lb = [  0, 0, 0, ...   % X
         0, 0, 0, ...   % Z
         0, 0, 0 ];     % Z_pos
 
-ub = [150, 30, 40, ... % X 
-      150, 30, 40, ... % Y
-      100, 20, 30, ... % Z
-       80, 15, 25 ];   % Z_pos
+ub = [0.25, 0, 0.1, ... % X 
+      0.25, 0, 0.1, ... % Y
+      0.25, 0, 0.1, ... % Z
+      0.25, 0.1, 0.1];   % Z_pos
 
 
 stopTime  = 10;                       
 nvars = 12;
 
+gains = [0.5, 0, 0, ...
+         0.5, 0, 0, ...
+         0.5, 0, 0, ...
+         0.5, 0, 0];
+
 costFcn = @(gains) pidCost_v1(gains, 10);
 
+% start off with just 10 LOL 
 options = optimoptions('particleswarm', ...
-    'SwarmSize', 50, ...
-    'MaxIterations', 100, ...
+    'SwarmSize', 5, ...
+    'MaxIterations', 50, ...
     'Display', 'iter');
 
-[optGains, fval] = particleswarm(costFcn, nvars, lb, ub, options);
-
-
-
-
-%{
-costFcn = @(gains) pidCost_v1(gains, modelName, stopTime);
-
-options = optimoptions('particleswarm', ...
-    'SwarmSize', 100, ...              
-    'MaxIterations', 200, ...
-    'MaxStallIterations', 30, ...       
-    'UseParallel', true, ...          
-    'Display', 'iter', ...
-    'FunctionTolerance', 1e-5, ...
-    'PlotFcn', @pswplotbestf, ...
-    'HybridFcn', {@patternsearch, optimoptions('patternsearch','UseParallel',true)});
-
-rng(42);  % Reproducible independent runs
-
-[optimalGains, fval, exitflag, output] = particleswarm(costFcn, nvars, lb, ub, options);
-
-% Results handling
-disp('Optimal gains [Roll_P,I,D  Pitch_P,I,D  Yaw_P,I,D  Thrust_P,I,D]:');
-disp(reshape(optimalGains, 3, 4)');
-
-save('pso_4pid_results.mat', 'optimalGains', 'fval', 'output', 'lb', 'ub');
-%}
+[optGains, fval] = particleswarm(costFcn, nvars, lb, ub, options)
