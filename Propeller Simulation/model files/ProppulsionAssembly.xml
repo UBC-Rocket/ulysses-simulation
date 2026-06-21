@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SimscapeMultibodyImportXML xmlns="urn:mathworks:SimscapeMultibody:import"
+                            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                            version="2.0">
+   <Created by="Hannah Yang" from="Onshape" on="06/21/26||16:00:48"
+            using="Simscape Multibody Exporter"/>
+   <ModelUnits length="meter" mass="kilogram"/>
+   <DataUnits length="meter" mass="kilogram"/>
+   <RootAssembly name="Proppulsion Assembly" uid="e3ce87c69d15999d7c132b44"
+                 version="w-54f9f471cbcaa7d5c21dd770">
+      <InstanceTree>
+         <Instance entityUid="1a75996972298227aec5279e" name="CRM2413 assembly_2 &lt;1&gt;"
+                   uid="MN7cIxI6eZkEwL9gX">
+            <Transform>
+               <Rotation>0.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 0.000000000 </Rotation>
+               <Translation>0.024016098 0.008214055 0.026533983 </Translation>
+            </Transform>
+            <Instance entityUid="KFDC*:*6ab936b2981d857459f38204" name="CW 8038 propeller &lt;1&gt;"
+                      uid="MA2g9YvzOQlwGjWOB">
+               <Transform>
+                  <Rotation>-0.755809431 -0.000000000 -0.654791649 0.000000000 1.000000000 -0.000000000 0.654791649 -0.000000000 -0.755809431 </Rotation>
+                  <Translation>0.000120724 0.079643121 -0.000113737 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KFzB*:*6ab936b2981d857459f38204" name="Cone screw &lt;1&gt;"
+                      uid="MDGZGO6baU6PtHV27">
+               <Transform>
+                  <Rotation>0.960877692 0.000000000 0.276973033 -0.000000000 1.000000000 0.000000000 -0.276973033 -0.000000000 0.960877692 </Rotation>
+                  <Translation>-0.000000000 0.072350000 -0.000000000 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KFvB*:*6ab936b2981d857459f38204" name="Extension rods &lt;1&gt;"
+                      uid="MH9gBrF2yZGEs8gzW">
+               <Transform>
+                  <Rotation>0.000000000 0.000000000 1.000000000 0.000000000 1.000000000 0.000000000 -1.000000000 0.000000000 0.000000000 </Rotation>
+                  <Translation>-0.018500000 0.018900000 0.000000000 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="e04489fa767a4fb2eae18f52" name="CRM2413 &lt;1&gt;" uid="MIY/VstWrnKMB7cUX">
+               <Transform>
+                  <Rotation>0.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 0.000000000 </Rotation>
+                  <Translation>0.024016098 -0.028185945 0.026533983 </Translation>
+               </Transform>
+               <Instance entityUid="KFTC*:*6ab936b2981d857459f38204" name="CRM2413 &lt;3&gt;"
+                         uid="MW3xILwuuxivX4CMm">
+                  <Transform>
+                     <Rotation>0.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 0.000000000 </Rotation>
+                     <Translation>0.026533983 -0.064585945 0.024016098 </Translation>
+                  </Transform>
+               </Instance>
+               <Instance entityUid="KFPC*:*6ab936b2981d857459f38204" name="CRM2413 &lt;2&gt;"
+                         uid="MYCosfUYxA+c7pc7K">
+                  <Transform>
+                     <Rotation>0.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 0.000000000 </Rotation>
+                     <Translation>0.026533983 -0.064585945 0.024016098 </Translation>
+                  </Transform>
+               </Instance>
+               <Instance entityUid="KFLC*:*6ab936b2981d857459f38204" name="CRM2413 &lt;1&gt;"
+                         uid="Mv7lnl0PlaTEq8wOR">
+                  <Transform>
+                     <Rotation>0.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 0.000000000 </Rotation>
+                     <Translation>0.026533983 -0.064585945 0.024016098 </Translation>
+                  </Transform>
+               </Instance>
+               <Instance entityUid="KFXC*:*6ab936b2981d857459f38204" name="CRM2413 &lt;4&gt;"
+                         uid="Mwlk077p9GZyucLZ0">
+                  <Transform>
+                     <Rotation>0.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 -1.000000000 0.000000000 0.000000000 </Rotation>
+                     <Translation>0.026533983 -0.064585945 0.024016098 </Translation>
+                  </Transform>
+               </Instance>
+            </Instance>
+            <Instance entityUid="KF3B*:*6ab936b2981d857459f38204" name="Propeller 1 cover &lt;1&gt;"
+                      uid="MN5mzaOCPsTWwjXqB">
+               <Transform>
+                  <Rotation>0.866025404 0.000000000 -0.500000000 0.000000000 1.000000000 0.000000000 0.500000000 0.000000000 0.866025404 </Rotation>
+                  <Translation>-0.000000000 0.060050000 -0.000000000 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KFrB*:*6ab936b2981d857459f38204" name="Base ring &lt;1&gt;"
+                      uid="MOGypxLxx19JDv/Tf">
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>0.000000000 0.000000000 0.000000000 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KF7B*:*6ab936b2981d857459f38204" name="Propeller 2 base &lt;1&gt;"
+                      uid="MpDSwpokAauKc1Jk4">
+               <Transform>
+                  <Rotation>0.931395918 0.000000000 -0.364007754 0.000000000 1.000000000 0.000000000 0.364007754 0.000000000 0.931395918 </Rotation>
+                  <Translation>0.000000000 0.073650000 -0.000000000 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KF/B*:*6ab936b2981d857459f38204" name="Propeller 2 cover &lt;1&gt;"
+                      uid="MpyH+igwPRQhMfImg">
+               <Transform>
+                  <Rotation>0.650337085 0.000000000 0.759645756 0.000000000 1.000000000 0.000000000 -0.759645756 0.000000000 0.650337085 </Rotation>
+                  <Translation>0.000000000 0.078150000 0.000000000 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KFvB*:*6ab936b2981d857459f38204" name="Extension rods &lt;2&gt;"
+                      uid="Mr/62Tc3algbnWXIo">
+               <Transform>
+                  <Rotation>-1.000000000 0.000000000 -0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 -1.000000000 </Rotation>
+                  <Translation>0.000000000 0.018900000 0.018500000 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KFHC*:*6ab936b2981d857459f38204" name="CCW 8038 propeller &lt;1&gt;"
+                      uid="MrPCPWXGveWFzYNn8">
+               <Transform>
+                  <Rotation>0.906776115 0.000000000 -0.421612472 0.000000000 1.000000000 0.000000000 0.421612472 0.000000000 0.906776115 </Rotation>
+                  <Translation>-0.002931753 0.060450000 -0.005553812 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KFvB*:*6ab936b2981d857459f38204" name="Extension rods &lt;3&gt;"
+                      uid="Mvucyim6oJV4Cdg7C">
+               <Transform>
+                  <Rotation>0.000000000 0.000000000 -1.000000000 0.000000000 1.000000000 0.000000000 1.000000000 0.000000000 0.000000000 </Rotation>
+                  <Translation>0.018500000 0.018900000 -0.000000000 </Translation>
+               </Transform>
+            </Instance>
+            <Instance entityUid="KFvB*:*6ab936b2981d857459f38204" name="Extension rods &lt;4&gt;"
+                      uid="Myvgqf/JOk/8uEOIF">
+               <Transform>
+                  <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+                  <Translation>-0.000000000 0.018900000 -0.018500000 </Translation>
+               </Transform>
+            </Instance>
+         </Instance>
+         <Instance entityUid="KFnB*:*6ab936b2981d857459f38204" name="Motor Stand &lt;1&gt;"
+                   uid="MertrNL7hpSw4R4+l">
+            <Transform>
+               <Rotation>1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 0.000000000 0.000000000 0.000000000 1.000000000 </Rotation>
+               <Translation>0.023086098 0.008214055 0.026233982 </Translation>
+            </Transform>
+         </Instance>
+      </InstanceTree>
+      <Constraints/>
+      <Joints/>
+   </RootAssembly>
+   <Assemblies>
+      <Assembly name="CRM2413" uid="e04489fa767a4fb2eae18f52">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <Constraints/>
+         <Joints/>
+      </Assembly>
+      <Assembly name="CRM2413 assembly_2" uid="1a75996972298227aec5279e">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <Constraints/>
+         <Joints/>
+      </Assembly>
+   </Assemblies>
+   <Parts>
+      <Part name="Cone screw" uid="KFzB*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0031669151</Mass>
+            <CenterOfMass>-0.000000000 0.010199868 -0.000000000 </CenterOfMass>
+            <Inertia>0.000000172 0.000000016 0.000000172 0.000000000 0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Cone screw.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Diffuse a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Specular a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Extension rods" uid="KFvB*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.000872411955</Mass>
+            <CenterOfMass>-0.000000000 -0.000000000 -0.000000000 </CenterOfMass>
+            <Inertia>0.000000079 0.000000004 0.000000079 0.000000000 0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Extension rods.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Diffuse a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Specular a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="CRM2413" uid="KFXC*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0259660688</Mass>
+            <CenterOfMass>-0.000000000 0.000250000 -0.001202046 </CenterOfMass>
+            <Inertia>0.000001868 0.000003682 0.000001903 0.000000000 0.000000000 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="CRM2413.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Diffuse a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Specular a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Propeller 2 base" uid="KF7B*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00351979054</Mass>
+            <CenterOfMass>-0.000000000 0.003263714 0.000000000 </CenterOfMass>
+            <Inertia>0.000000172 0.000000321 0.000000172 0.000000000 0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Propeller 2 base.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Diffuse a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Specular a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Base ring" uid="KFrB*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00486599537</Mass>
+            <CenterOfMass>-0.000000000 0.001508785 0.000000000 </CenterOfMass>
+            <Inertia>0.000000861 0.000001714 0.000000861 0.000000000 0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Base ring.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Diffuse a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Specular a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="CRM2413" uid="KFTC*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0125168159</Mass>
+            <CenterOfMass>0.000000000 -0.022958955 -0.000000000 </CenterOfMass>
+            <Inertia>0.000000450 0.000000861 0.000000450 0.000000000 0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="CRM24131.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Diffuse a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Specular a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Propeller 1 cover" uid="KF3B*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00269332364</Mass>
+            <CenterOfMass>0.000000000 0.007049578 0.000000000 </CenterOfMass>
+            <Inertia>0.000000185 0.000000426 0.000000293 0.000000000 -0.000000002 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Propeller 1 cover.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Diffuse a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Specular a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Motor Stand" uid="KFnB*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0906566284</Mass>
+            <CenterOfMass>-0.001204700 0.011047447 0.000163738 </CenterOfMass>
+            <Inertia>0.000024008 0.000053283 0.000052246 0.000000105 -0.000000043 0.000003816 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Motor Stand.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.937254902" g="0.823529412" r="0.796078431"/>
+            <Diffuse a="1.000000000" b="0.937254902" g="0.823529412" r="0.796078431"/>
+            <Specular a="1.000000000" b="0.937254902" g="0.823529412" r="0.796078431"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="CRM2413" uid="KFPC*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0361194048</Mass>
+            <CenterOfMass>-0.000000000 -0.011425000 0.000000000 </CenterOfMass>
+            <Inertia>0.000004720 0.000007391 0.000004720 0.000000000 0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="CRM24132.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Diffuse a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Specular a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="Propeller 2 cover" uid="KF/B*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00294930399</Mass>
+            <CenterOfMass>-0.000000000 0.010090890 0.000000278 </CenterOfMass>
+            <Inertia>0.000000198 0.000000320 0.000000283 -0.000000000 0.000000002 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="Propeller 2 cover.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Diffuse a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Specular a="1.000000000" b="0.752941176" g="0.752941176" r="0.752941176"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="CRM2413" uid="KFLC*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0425344364</Mass>
+            <CenterOfMass>-0.000000000 0.016019102 -0.000000000 </CenterOfMass>
+            <Inertia>0.000006477 0.000007340 0.000006477 0.000000000 0.000000000 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="CRM24133.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Diffuse a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Specular a="1.000000000" b="0.000000000" g="0.000000000" r="1.000000000"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="CCW 8038 propeller" uid="KFHC*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.00690068564</Mass>
+            <CenterOfMass>0.004999982 0.004891021 0.003800003 </CenterOfMass>
+            <Inertia>0.000017994 0.000019029 0.000001079 -0.000000000 0.000004074 -0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="CCW 8038 propeller.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="1.000000000" g="1.000000000" r="1.000000000"/>
+            <Diffuse a="1.000000000" b="1.000000000" g="1.000000000" r="1.000000000"/>
+            <Specular a="1.000000000" b="1.000000000" g="1.000000000" r="1.000000000"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+      <Part name="CW 8038 propeller" uid="KFDC*:*6ab936b2981d857459f38204">
+         <ModelUnits length="meter" mass="kilogram"/>
+         <MassProperties>
+            <Mass>0.0069000493</Mass>
+            <CenterOfMass>-0.000000019 0.004891180 0.000000049 </CenterOfMass>
+            <Inertia>0.000017990 0.000019025 0.000001079 0.000000000 -0.000004072 0.000000000 </Inertia>
+         </MassProperties>
+         <GeometryFile name="CW 8038 propeller.step" type="STEP"/>
+         <VisualProperties>
+            <Ambient a="1.000000000" b="0.937254902" g="0.823529412" r="0.796078431"/>
+            <Diffuse a="1.000000000" b="0.937254902" g="0.823529412" r="0.796078431"/>
+            <Specular a="1.000000000" b="0.937254902" g="0.823529412" r="0.796078431"/>
+            <Emissive a="1" b="0" g="0" r="0"/>
+            <Shininess>0.5</Shininess>
+         </VisualProperties>
+      </Part>
+   </Parts>
+</SimscapeMultibodyImportXML>

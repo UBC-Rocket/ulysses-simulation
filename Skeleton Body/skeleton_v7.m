@@ -1,0 +1,1 @@
+smimport('crm2413_assembly_2/urdf/crm2413_assembly_2.urdf')
