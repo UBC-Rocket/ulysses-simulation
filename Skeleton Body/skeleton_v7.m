@@ -1,1 +1,2 @@
-smimport('crm2413_assembly_2/urdf/crm2413_assembly_2.urdf')
+smimport(['Propeller Simulation/proppulsion_assembly/urdf/proppulsion_assembly' ...
+    '.urdf'])

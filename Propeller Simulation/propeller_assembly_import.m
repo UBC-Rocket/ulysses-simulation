@@ -1,0 +1,1 @@
+smimport('Propeller Simulation/model files/ProppulsionAssembly.xml')
