@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="05/10/26||21:24:35" using="Simscape Multibody Link Version 7.4" from="SolidWorks 33.4.1"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="V1.5 Gimbal Assembly" uid="V1.5 Gimbal Assembly" version="1367">
+<AssemblyFile name="V1.5 Gimbal Assembly.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Avionics rods-3" uid="Avionics rods-3" entityUid="Avionics rods*:*Default">
+<Transform>
+<Rotation>0.98527140069818298 0 0.17099785661300271 0 -1 0 0.17099785661300271 0 -0.98527140069818286</Rotation>
+<Translation>0.023948419006487427 0.054041890987984564 0.016945642579184038</Translation>
+</Transform>
+</Instance>
+<Instance name="Lower Gear-1" uid="Lower Gear-1" entityUid="Lower Gear*:*Default">
+<Transform>
+<Rotation>2.4381393574021707e-16 0.11134657179460984 0.99378163645218742 0 0.99378163645218753 -0.11134657179460984 -0.99999999999999989 0 2.3936558231842906e-16</Rotation>
+<Translation>0.023077325055073417 0.031444298940718235 0.025833405131188678</Translation>
+</Transform>
+</Instance>
+<Instance name="Main CF Rods-8" uid="Main CF Rods-8" entityUid="Main CF Rods*:*Default">
+<Transform>
+<Rotation>0.68068259290086064 -0.50865005079683667 0.52720615848654162 0.68621549284511452 0.69465837045899947 -0.21577313486758257 -0.25647515493922146 0.50865005079683501 0.82188540607756222</Rotation>
+<Translation>-0.016977054161960235 0.023820524469820626 0.10277111574763129</Translation>
+</Transform>
+</Instance>
+<Instance name="Main CF Rods-6" uid="Main CF Rods-6" entityUid="Main CF Rods*:*Default">
+<Transform>
+<Rotation>-0.45280029550108786 0.50865005079683667 0.73228888986417318 -0.28665095567172644 0.69465837045899925 -0.65975827237233897 -0.84427668569409975 -0.50865005079683512 -0.16873649225275367</Rotation>
+<Translation>0.064873892174935138 0.023820524469820602 0.02092016941073677</Translation>
+</Transform>
+</Instance>
+<Instance name="Mid Assembly-1" uid="Mid Assembly-1" entityUid="Mid Assembly" rigid="true">
+<Transform>
+<Rotation>0 -5.2735593669694936e-16 1.0000000000000002 0 1.0000000000000002 5.2735593669694936e-16 -1 0 0</Rotation>
+<Translation>-0.0054744730653177691 0.043374895888990642 0.082029851203889365</Translation>
+</Transform>
+<Instance name="Servo 2 Connector-1" uid="Servo 2 Connector-1" grounded="true" entityUid="Servo 2 Connector*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.0096342086247053343 0.0072669950989939155 0.029359197071797367</Translation>
+</Transform>
+</Instance>
+<Instance name="DS3218 Digital Servo-1" uid="DS3218 Digital Servo-1" entityUid="DS3218 Digital Servo*:*Default">
+<Transform>
+<Rotation>-1 0 0 0 -1.0000000000000002 0 0 0 1.0000000000000002</Rotation>
+<Translation>0.0096342086247053482 0.037266995098993928 0.035459197071797365</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="1.5_FRAME BASE-1" uid="1.5_FRAME BASE-1" grounded="true" entityUid="1.5_FRAME BASE*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.023948419006487434 0.01404189098798457 0.061845642579184033</Translation>
+</Transform>
+</Instance>
+<Instance name="Proppulsion Assembly-1" uid="Proppulsion Assembly-1" entityUid="Proppulsion Assembly" rigid="true">
+<Transform>
+<Rotation>1.0000000000000002 5.271715110320593e-16 -3.4326110951565309e-16 5.0923598242252863e-16 -1.0000000000000002 1.1102230246251565e-16 -3.4079679413301654e-16 0 -1</Rotation>
+<Translation>-6.4252307040768564e-05 0.10885594611411128 0.088379624916171295</Translation>
+</Transform>
+<Instance name="Motor Stand-1" uid="Motor Stand-1" grounded="true" entityUid="Motor Stand*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.023086097838741125 0.0082140551261267736 0.026233982336987233</Translation>
+</Transform>
+</Instance>
+<Instance name="CRM2413-1" uid="CRM2413-1" entityUid="CRM2413*:*Default">
+<Transform>
+<Rotation>3.0604092367857779e-16 1 0 0 0 -1 -1 3.0604092367857779e-16 0</Rotation>
+<Translation>0.024016098290692248 -0.048785944873873249 0.026533982788938364</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Avionics rods-2" uid="Avionics rods-2" entityUid="Avionics rods*:*Default">
+<Transform>
+<Rotation>-0.92707338186573851 0 0.37487990695157647 0 -1 0 0.37487990695157647 0 0.92707338186573851</Rotation>
+<Translation>0.06884841900648743 0.054041890987984564 0.061845642579183728</Translation>
+</Transform>
+</Instance>
+<Instance name="DS3218 Digital Servo-1" uid="DS3218 Digital Servo-1" entityUid="DS3218 Digital Servo*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.03419841900648745 0.021956104550357663 0.063245642579184025</Translation>
+</Transform>
+</Instance>
+<Instance name="Avionics rods-1" uid="Avionics rods-1" entityUid="Avionics rods*:*Default">
+<Transform>
+<Rotation>0.64974511307929339 0 -0.76015214794774899 0 -1 0 -0.76015214794774899 0 -0.64974511307929339</Rotation>
+<Translation>-0.020951580993512558 0.054041890987984564 0.061845642579184332</Translation>
+</Transform>
+</Instance>
+<Instance name="Avionics rods-4" uid="Avionics rods-4" entityUid="Avionics rods*:*Default">
+<Transform>
+<Rotation>0.99790176662737085 0 -0.064746151715544112 0 -1 0 -0.064746151715544112 0 -0.99790176662737085</Rotation>
+<Translation>0.023948419006487431 0.054041890987984564 0.10674564257918404</Translation>
+</Transform>
+</Instance>
+<Instance name="Main CF Rods-7" uid="Main CF Rods-7" entityUid="Main CF Rods*:*Default">
+<Transform>
+<Rotation>0.7854769776170264 -0.50865005079684078 0.35256353109474142 0.13248443797431253 0.69465837045899903 0.70703438533488505 -0.60454428400924598 -0.50865005079683179 0.61302637340992816</Rotation>
+<Translation>-0.016977054161960381 0.023820524469820581 0.020920169410736905</Translation>
+</Transform>
+</Instance>
+<Instance name="Main CF Rods-9" uid="Main CF Rods-9" entityUid="Main CF Rods*:*Default">
+<Transform>
+<Rotation>0.8171935324805123 0.50865005079683667 0.27105323517050572 -0.20353347075440151 0.69465837045899936 -0.68994483448600064 -0.53922987375950282 0.50865005079683501 0.6711976378606288</Rotation>
+<Translation>0.064873892174934847 0.023820524469820609 0.10277111574763156</Translation>
+</Transform>
+</Instance>
+<Instance name="Clamp-1" uid="Clamp-1" entityUid="Clamp*:*Default">
+<Transform>
+<Rotation>-0.98652592890561686 0 0.16360498646713115 0 1 0 -0.16360498646713115 0 -0.98652592890561686</Rotation>
+<Translation>0.068848419006487402 0.044041890987984576 0.061845642579183707</Translation>
+</Transform>
+</Instance>
+<Instance name="Bearings-1" uid="Bearings-1" entityUid="Bearings*:*Default">
+<Transform>
+<Rotation>-0.92372802134706822 0 0.38304900806323777 0.38304900806323777 0 0.92372802134706822 0 1 0</Rotation>
+<Translation>0.023948419006487438 0.031951890987984573 0.020045642579184023</Translation>
+</Transform>
+</Instance>
+<Instance name="Clamp-2" uid="Clamp-2" entityUid="Clamp*:*Default">
+<Transform>
+<Rotation>-0.87184765021106125 0 -0.48977716853835812 0 1 0 0.48977716853835812 0 -0.87184765021106125</Rotation>
+<Translation>-0.020951580993512554 0.044041890987984583 0.061845642579184325</Translation>
+</Transform>
+</Instance>
+<Instance name="Bearings-3" uid="Bearings-3" entityUid="Bearings*:*Default">
+<Transform>
+<Rotation>-0.17364817766693039 0 0.98480775301220802 0.98480775301220802 0 0.1736481776669305 0 1 0</Rotation>
+<Translation>0.023948419006487434 0.070641890987984582 0.10384564257918401</Translation>
+</Transform>
+</Instance>
+<Instance name="92981A750_Alloy Steel Shoulder Screws-2" uid="92981A750_Alloy Steel Shoulder Screws-2" entityUid="92981A750_Alloy Steel Shoulder Screws*:*92981A750">
+<Transform>
+<Rotation>0.69968147525269275 -0.71445492033312785 0 -0.71445492033312785 -0.69968147525269275 0 0 0 -1</Rotation>
+<Translation>0.023948419006487441 0.070641890987984568 0.02020964257918403</Translation>
+</Transform>
+</Instance>
+<Instance name="92981A750_Alloy Steel Shoulder Screws-1" uid="92981A750_Alloy Steel Shoulder Screws-1" entityUid="92981A750_Alloy Steel Shoulder Screws*:*92981A750">
+<Transform>
+<Rotation>0.51506326109993372 -0.85715216680884698 0 0.85715216680884698 0.51506326109993372 0 0 0 0.99999999999999989</Rotation>
+<Translation>0.023948419006487431 0.070641890987984596 0.10248164257918406</Translation>
+</Transform>
+</Instance>
+<Instance name="94361A522_Short-Thread Alloy Steel Shoulder Screw-1" uid="94361A522_Short-Thread Alloy Steel Shoulder Screw-1" entityUid="94361A522_Short-Thread Alloy Steel Shoulder Screw*:*94361A522">
+<Transform>
+<Rotation>3.7722762232517792e-16 -1.1202591922298228e-16 1 -0.96381118078205541 0.26658583570681371 4.163336342344337e-16 -0.26658583570681371 -0.9638111807820553 0</Rotation>
+<Translation>0.053834724006479588 0.070936312297019286 0.062145642579184035</Translation>
+</Transform>
+</Instance>
+<Instance name="Bearings-2" uid="Bearings-2" entityUid="Bearings*:*Default">
+<Transform>
+<Rotation>1 0 0 0 0 1 0 -1 0</Rotation>
+<Translation>0.023948419006487434 0.070641890987984568 0.019845642579184038</Translation>
+</Transform>
+</Instance>
+<Instance name="Bearings-11" uid="Bearings-11" entityUid="Bearings*:*Default">
+<Transform>
+<Rotation>-1.8166718742994798e-16 1.0000000000000002 1.399668072024936e-16 0.78731595252201703 2.3592239273284576e-16 -0.61654974730701928 -0.61654974730701917 0 -0.7873159525220168</Rotation>
+<Translation>0.056084724006479583 0.070641890987984582 0.062145642579184035</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.0080000000000000002 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>DS3218 Digital Servo-1</Uid>
+</InstancePath>
+<Position>-0.019249999999999993 8.5786437626907824e-05 -0.031600000000000003</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.027999999999999997 -0.012500000000000004</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>DS3218 Digital Servo-1</Uid>
+</InstancePath>
+<Position>0.027249999999999837 0.02 -0.013900000000000003</Position>
+<Axis>2.4781763942526383e-16 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0.030500000000000013 0.027999999999999997 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>DS3218 Digital Servo-1</Uid>
+</InstancePath>
+<Position>0.020249999999999997 0.02 -0.013900000000000003</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric1">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>DS3218 Digital Servo-1</Uid>
+</InstancePath>
+<Position>-0.010249999999999995 0.010000000000000005 -0.031600000000000003</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Lower Gear-1</Uid>
+</InstancePath>
+<Position>0.0031877625520046436 0.00060561634148826454 0.00080868937249078954</Position>
+<Axis>-0.99999999999999989 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Distance name="Distance1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Lower Gear-1</Uid>
+</InstancePath>
+<Position>-0.005312237447995357 0 0</Position>
+<Axis>-0.99999999999999989 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>DS3218 Digital Servo-1</Uid>
+</InstancePath>
+<Position>0 0 -0.031600000000000003</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Distance>
+<Concentric name="Concentric2">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.056599999999999998 0.041999999999999989</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mid Assembly-1</Uid>
+<Uid>Servo 2 Connector-1</Uid>
+</InstancePath>
+<Position>-0.011057611844574891 0.020000000000000004 6.3694999999988622e-05</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident5">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Lower Gear-1</Uid>
+</InstancePath>
+<Position>0.0031877625520046401 0.00060561634148826454 0.00080868937249078954</Position>
+<Axis>0.99999999999999989 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mid Assembly-1</Uid>
+<Uid>Servo 2 Connector-1</Uid>
+</InstancePath>
+<Position>0.049750000000000003 0.020000000000000004 6.3694999999992091e-05</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric3">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Mid Assembly-1</Uid>
+<Uid>Servo 2 Connector-1</Uid>
+</InstancePath>
+<Position>0.010250000000000002 0.020000000000000004 0.010807611844574884</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Proppulsion Assembly-1</Uid>
+<Uid>Motor Stand-1</Uid>
+</InstancePath>
+<Position>0.013637900138573644 0.029999999999999971 0</Position>
+<Axis>1.0000000000000002 0 -3.4940901057799801e-16</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Distance name="Distance2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Proppulsion Assembly-1</Uid>
+<Uid>Motor Stand-1</Uid>
+</InstancePath>
+<Position>0.028062878474779226 0.030000000000000013 0</Position>
+<Axis>-1.0000000000000002 0 3.4940901057799791e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Mid Assembly-1</Uid>
+<Uid>Servo 2 Connector-1</Uid>
+</InstancePath>
+<Position>0 0 0.026000000000000009</Position>
+<Axis>0 0 1.0000000000000002</Axis>
+</ConstraintGeometry>
+</Distance>
+<UnknownConstraint name="GearMate1">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Lower Gear-1</Uid>
+</InstancePath>
+<Position>0.0031877625520046401 0.00060561634148826454 0.00080868937249078954</Position>
+<Axis>-0.99999999999999989 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Mid Assembly-1</Uid>
+<Uid>Servo 2 Connector-1</Uid>
+</InstancePath>
+<Position>0.049750000000000003 0.019999999999999296 6.3695000000370261e-05</Position>
+<Axis>1 0 0</Axis>
+</ConstraintGeometry>
+</UnknownConstraint>
+<Concentric name="Concentric52">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-0.044899999999999995 0.050000000000000003 3.1225022567582528e-16</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Avionics rods-1</Uid>
+</InstancePath>
+<Position>0 0.5 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric53">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0.044899999999999995 0.050000000000000003 -3.1225022567582528e-16</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Avionics rods-2</Uid>
+</InstancePath>
+<Position>0 0.5 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric54">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-3.1225022567582528e-16 0.050000000000000003 -0.044899999999999995</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Avionics rods-3</Uid>
+</InstancePath>
+<Position>0 0.5 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident27">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.040000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Avionics rods-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric55">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>3.1225022567582528e-16 0.050000000000000003 0.044900000000000002</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Avionics rods-4</Uid>
+</InstancePath>
+<Position>0 0.5 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident28">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.040000000000000001 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Avionics rods-4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric58">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0.05516767459075908 0.02922906785468804 -0.055167674590758664</Position>
+<Axis>-0.50865005079683701 -0.69465837045899903 0.50865005079683567</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Main CF Rods-6</Uid>
+</InstancePath>
+<Position>0 0.34999999999999992 0</Position>
+<Axis>0 -1 -1.8041124150158794e-16</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident31">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0.040925473168447565 0.0097786334818360347 -0.040925473168447399</Position>
+<Axis>0.50865005079683678 0.69465837045899947 -0.50865005079683512</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Main CF Rods-6</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 1.8041124150158794e-16</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric59">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-0.05516767459075924 0.02922906785468804 -0.055167674590758504</Position>
+<Axis>0.50865005079684089 -0.69465837045899892 0.50865005079683157</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Main CF Rods-7</Uid>
+</InstancePath>
+<Position>0 0.35000000000000003 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident32">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-0.040925473168447829 0.0097786334818360347 -0.040925473168447135</Position>
+<Axis>-0.50865005079684045 0.69465837045899947 -0.50865005079683145</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Main CF Rods-7</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric60">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-0.05516767459075908 0.02922906785468804 0.055167674590758671</Position>
+<Axis>0.50865005079683701 -0.69465837045899903 -0.50865005079683567</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Main CF Rods-8</Uid>
+</InstancePath>
+<Position>0 0.35000000000000003 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident33">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-0.040925473168447565 0.0097786334818360347 0.040925473168447392</Position>
+<Axis>-0.50865005079683678 0.69465837045899947 0.50865005079683512</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Main CF Rods-8</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric61">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0.055167674590758858 0.02922906785468804 0.055167674590758893</Position>
+<Axis>-0.50865005079683734 -0.69465837045899892 -0.50865005079683512</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Main CF Rods-9</Uid>
+</InstancePath>
+<Position>0 0.34999999999999987 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident34">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0.040925473168447538 0.0097786334818360347 0.04092547316844742</Position>
+<Axis>0.50865005079683689 0.69465837045899947 0.50865005079683501</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Main CF Rods-9</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric82">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-0.05516767459075924 0.02922906785468804 -0.055167674590758504</Position>
+<Axis>0.50865005079684089 -0.69465837045899892 0.50865005079683157</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Main CF Rods-7</Uid>
+</InstancePath>
+<Position>0 0.35000000000000003 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident43">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-0.040925473168447829 0.0097786334818360347 -0.040925473168447135</Position>
+<Axis>-0.50865005079684045 0.69465837045899947 -0.50865005079683145</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Main CF Rods-7</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric94">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Avionics rods-2</Uid>
+</InstancePath>
+<Position>0 0.5 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Clamp-1</Uid>
+</InstancePath>
+<Position>0 0.010000000000000002 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident45">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0.044657582786048797 0.030000000000000006 0.0059852541133013984</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Clamp-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident46">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Avionics rods-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Clamp-1</Uid>
+</InstancePath>
+<Position>0 0.010000000000000002 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Angle name="LimitAngle1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Proppulsion Assembly-1</Uid>
+<Uid>Motor Stand-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.070000000000000007 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Angle>
+<Parallel name="Allign Mate">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.070000000000000007 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Proppulsion Assembly-1</Uid>
+<Uid>Motor Stand-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Parallel>
+<Concentric name="Concentric95">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Avionics rods-1</Uid>
+</InstancePath>
+<Position>0 0.5 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Clamp-2</Uid>
+</InstancePath>
+<Position>0 0.010000000000000002 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident47">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>-0.044657582786048797 0.030000000000000006 0.0059852541133013984</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Clamp-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident48">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Avionics rods-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Clamp-2</Uid>
+</InstancePath>
+<Position>0 0.010000000000000002 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<UnknownConstraint name="Lock1">
+<ConstraintGeometry geomType="Unknown">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="Unknown">
+<InstancePath>
+<Uid>Clamp-1</Uid>
+</InstancePath>
+</ConstraintGeometry>
+</UnknownConstraint>
+<UnknownConstraint name="Lock2">
+<ConstraintGeometry geomType="Unknown">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="Unknown">
+<InstancePath>
+<Uid>Clamp-2</Uid>
+</InstancePath>
+</ConstraintGeometry>
+</UnknownConstraint>
+<Concentric name="Concentric96">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.017910000000000002 -0.041800000000000011</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bearings-1</Uid>
+</InstancePath>
+<Position>0 0.0029999999999999992 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident50">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.017910000000000002 -0.041800000000000011</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bearings-1</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric97">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.056599999999999998 -0.041999999999999996</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bearings-2</Uid>
+</InstancePath>
+<Position>0 0.0029999999999999992 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident52">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.056599999999999998 -0.041999999999999996</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bearings-2</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric98">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.056599999999999998 0.041999999999999989</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bearings-3</Uid>
+</InstancePath>
+<Position>0 0.0030000000000000027 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident53">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.056599999999999998 0.041999999999999989</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bearings-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric99">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Proppulsion Assembly-1</Uid>
+<Uid>Motor Stand-1</Uid>
+</InstancePath>
+<Position>0.050487856810984805 0.029705578690965267 0</Position>
+<Axis>-1.0000000000000002 0 3.4940901057799801e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>94361A522_Short-Thread Alloy Steel Shoulder Screw-1</Uid>
+</InstancePath>
+<Position>0 0 -0.0097500000000000017</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric100">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Proppulsion Assembly-1</Uid>
+<Uid>Motor Stand-1</Uid>
+</InstancePath>
+<Position>0.013637900138573644 0.029999999999999971 0</Position>
+<Axis>1.0000000000000002 0 -3.4940901057799801e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bearings-11</Uid>
+</InstancePath>
+<Position>0 0.0030000000000000027 0</Position>
+<Axis>0 -1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident55">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Proppulsion Assembly-1</Uid>
+<Uid>Motor Stand-1</Uid>
+</InstancePath>
+<Position>0.036062878474779236 0.030000000000000013 0</Position>
+<Axis>1.0000000000000002 0 -3.4940901057799791e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Bearings-11</Uid>
+</InstancePath>
+<Position>0 0.0030000000000000027 0</Position>
+<Axis>0 1.0000000000000002 0</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident57">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Proppulsion Assembly-1</Uid>
+<Uid>Motor Stand-1</Uid>
+</InstancePath>
+<Position>0.036062878474779236 0.030000000000000013 0</Position>
+<Axis>1.0000000000000002 0 -3.4940901057799791e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>94361A522_Short-Thread Alloy Steel Shoulder Screw-1</Uid>
+</InstancePath>
+<Position>0 0.0047900000000000026 0.0052499999999999977</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric101">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Bearings-3</Uid>
+</InstancePath>
+<Position>0 0.0030000000000000027 0</Position>
+<Axis>0 -1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>92981A750_Alloy Steel Shoulder Screws-1</Uid>
+</InstancePath>
+<Position>0 0 0.0093639999999999973</Position>
+<Axis>0 0 0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident59">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Bearings-3</Uid>
+</InstancePath>
+<Position>0 0.0030000000000000027 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>92981A750_Alloy Steel Shoulder Screws-1</Uid>
+</InstancePath>
+<Position>0 0.005000000000000001 0.0043639999999999929</Position>
+<Axis>0 0 -0.99999999999999989</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric102">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0.056599999999999998 -0.041999999999999996</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>92981A750_Alloy Steel Shoulder Screws-2</Uid>
+</InstancePath>
+<Position>0 0 0.0093639999999999991</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Coincident name="Coincident60">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>1.5_FRAME BASE-1</Uid>
+</InstancePath>
+<Position>0 0 -0.045999999999999999</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>92981A750_Alloy Steel Shoulder Screws-2</Uid>
+</InstancePath>
+<Position>0 0.0049999999999999975 0.0043639999999999998</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+<Assembly name="Mid Assembly" uid="Mid Assembly" version="139">
+<ModelUnits mass="kilogram" length="meter"/>
+<AssemblyFile name="Mid Assembly.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+<Assembly name="Proppulsion Assembly" uid="Proppulsion Assembly" version="178">
+<ModelUnits mass="kilogram" length="meter"/>
+<AssemblyFile name="Proppulsion Assembly.SLDASM" type="SolidWorks Assembly"/>
+</Assembly>
+</Assemblies>
+<Parts>
+<Part name="1.5_FRAME BASE" uid="1.5_FRAME BASE*:*Default" version="12118">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="1.5_FRAME BASE.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.10400000000000001</Mass>
+<CenterOfMass>0.0006025596643914041 0.028710494104055007 0.00025367448135464398</CenterOfMass>
+<Inertia>0.00019870953596523667 0.00026374486222721226 0.00019461682279099123 8.7116636222950016e-07 7.3884502446493657e-07 1.2582251748560798e-06</Inertia>
+</MassProperties>
+<GeometryFile name="1.5_FRAME BASE_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="92981A750_Alloy Steel Shoulder Screws" uid="92981A750_Alloy Steel Shoulder Screws*:*92981A750" version="2137">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="92981A750_Alloy Steel Shoulder Screws.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0060000000000000001</Mass>
+<CenterOfMass>5.6455653797721539e-08 -5.1850063897571396e-07 0.0034161992714617411</CenterOfMass>
+<Inertia>1.7355733724890688e-07 1.7355631103287156e-07 5.4583742387186825e-08 -2.568402086588152e-11 -1.5917404934822529e-11 -7.5167803141983906e-13</Inertia>
+</MassProperties>
+<GeometryFile name="92981A750_Alloy Steel Shoulder Screws_92981A750_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.75294117647058822" g="0.75294117647058822" b="0.75294117647058822" a="1"/>
+<Diffuse r="0.75294117647058822" g="0.75294117647058822" b="0.75294117647058822" a="1"/>
+<Specular r="0.22588235294117645" g="0.22588235294117645" b="0.22588235294117645" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="94361A522_Short-Thread Alloy Steel Shoulder Screw" uid="94361A522_Short-Thread Alloy Steel Shoulder Screw*:*94361A522" version="1202">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="94361A522_Short-Thread Alloy Steel Shoulder Screw.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0060000000000000001</Mass>
+<CenterOfMass>-5.6720195356705963e-08 -1.0915882165813883e-07 0.0028505552443944854</CenterOfMass>
+<Inertia>1.9535307891525e-07 1.9535383216934866e-07 4.9786054333846426e-08 -1.1174322710137434e-11 2.8403695729933286e-12 9.3942469411732669e-13</Inertia>
+</MassProperties>
+<GeometryFile name="94361A522_Short-Thread Alloy Steel Shoulder Screw_94361A522_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.75294117647058822" g="0.75294117647058822" b="0.75294117647058822" a="1"/>
+<Diffuse r="0.75294117647058822" g="0.75294117647058822" b="0.75294117647058822" a="1"/>
+<Specular r="0.22588235294117645" g="0.22588235294117645" b="0.22588235294117645" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Avionics rods" uid="Avionics rods*:*Default" version="114">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Avionics rods.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.014</Mass>
+<CenterOfMass>0 0.25 0</CenterOfMass>
+<Inertia>0.00029168854166666667 4.3749999999999998e-08 0.00029168854166666667 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Avionics rods_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Diffuse r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Specular r="0.1756862745098039" g="0.1756862745098039" b="0.1756862745098039" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Bearings" uid="Bearings*:*Default" version="110">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Bearings.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0014138035963256134</Mass>
+<CenterOfMass>0 0.0015 0</CenterOfMass>
+<Inertia>1.4169846544173464e-08 2.6218987693858504e-08 1.4169846544173461e-08 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Bearings_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.75294117647058822" g="0.75294117647058822" b="1" a="1"/>
+<Diffuse r="0.75294117647058822" g="0.75294117647058822" b="1" a="1"/>
+<Specular r="0.60235294117647065" g="0.60235294117647065" b="0.80000000000000004" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="CRM2413" uid="CRM2413*:*Default" version="148">
+<ModelUnits mass="kilogram" length="meter"/>
+<PartFile name="CRM2413.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.14400000000000002</Mass>
+<CenterOfMass>3.6586449077832985e-09 5.1512782891765819e-09 -0.015039747716466982</CenterOfMass>
+<Inertia>0.00019994142401576575 8.0247163847582914e-05 0.00013640476373242067 -2.5999928676096989e-11 -1.2341884410670003e-11 -1.4846314274848877e-07</Inertia>
+</MassProperties>
+<GeometryFile name="CRM2413_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Diffuse r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Specular r="0.12549019607843137" g="0.12549019607843137" b="0.12549019607843137" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Clamp" uid="Clamp*:*Default" version="622">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Clamp.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00125</Mass>
+<CenterOfMass>-5.2342734503029609e-09 0.0049811636756252426 -0.0017568891097819851</CenterOfMass>
+<Inertia>3.2033136305009599e-08 3.453092196006707e-08 2.5855791484430874e-08 3.5691202974681796e-11 -1.1778958587005333e-15 1.7402528045902124e-14</Inertia>
+</MassProperties>
+<GeometryFile name="Clamp_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="DS3218 Digital Servo" uid="DS3218 Digital Servo*:*Default" version="353">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="DS3218 Digital Servo.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.060999999999999999</Mass>
+<CenterOfMass>-0.0002368128251466257 0.010038889294326538 -0.006422714952378351</CenterOfMass>
+<Inertia>1.031728381562049e-05 1.7069946862793337e-05 1.0705205175065983e-05 -1.4253814006970009e-09 -1.6821455567408464e-08 -9.1580346403597519e-10</Inertia>
+</MassProperties>
+<GeometryFile name="DS3218 Digital Servo_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.5607843137254902" g="0.2627450980392157" b="0" a="1"/>
+<Diffuse r="0.5607843137254902" g="0.2627450980392157" b="0" a="1"/>
+<Specular r="0.2803921568627451" g="0.13137254901960785" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Lower Gear" uid="Lower Gear*:*Default" version="216">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Lower Gear.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.010999999999999999</Mass>
+<CenterOfMass>-0.0018087341651566633 0.006244780067485565 0.00080868937249080049</CenterOfMass>
+<Inertia>1.0000000000000001e-11 1.0000000000000001e-11 1.0000000000000001e-11 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Lower Gear_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Main CF Rods" uid="Main CF Rods*:*Default" version="125">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Main CF Rods.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.017000000000000001</Mass>
+<CenterOfMass>0 0.17499999999999996 0</CenterOfMass>
+<Inertia>0.00017356822916666663 5.3125000000000001e-08 0.00017356822916666663 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Main CF Rods_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Diffuse r="0.25098039215686274" g="0.25098039215686274" b="0.25098039215686274" a="1"/>
+<Specular r="0.1756862745098039" g="0.1756862745098039" b="0.1756862745098039" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Motor Stand" uid="Motor Stand*:*Default" version="1431">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Motor Stand.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.021999999999999999</Mass>
+<CenterOfMass>-0.0012047003328432371 0.011047446598546003 0.00016373766863764529</CenterOfMass>
+<Inertia>5.8261564047726576e-06 1.2930484663622515e-05 1.2678660581047695e-05 2.5494871444738986e-08 -1.0529234057520593e-08 9.2602821136009378e-07</Inertia>
+</MassProperties>
+<GeometryFile name="Motor Stand_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Servo 2 Connector" uid="Servo 2 Connector*:*Default" version="2170">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Servo 2 Connector.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.032000000000000001</Mass>
+<CenterOfMass>0.01699851014755073 0.012826620926527565 0.0032115730653993067</CenterOfMass>
+<Inertia>5.6769489940894868e-06 2.1885807724296751e-05 1.9358980765607051e-05 -1.3987961899162605e-07 1.0115861282109822e-06 -4.2518028575100257e-07</Inertia>
+</MassProperties>
+<GeometryFile name="Servo 2 Connector_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

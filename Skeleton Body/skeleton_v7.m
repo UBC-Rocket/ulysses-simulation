@@ -1,2 +1,1 @@
-smimport(['Propeller Simulation/proppulsion_assembly/urdf/proppulsion_assembly' ...
-    '.urdf'])
+xml_file = smexportonshape("")

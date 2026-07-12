@@ -1,0 +1,77 @@
+% Load smiData
+run('V1_5GimbalAssembly_DataFile_v2.m')
+
+% Calculate total mass
+total = 0;
+for i = 1:12
+    total = total + smiData.Solid(i).mass;
+end
+fprintf('Total Mass: %.6f kg\n', total)
+
+% Check if FRAME BASE（Solid 6）gets the right value
+fprintf('\n--- Solid(6) FRAME BASE ---\n')
+fprintf('mass: %.4f kg\n', smiData.Solid(6).mass)
+fprintf('CoM:  [%.2f, %.2f, %.2f] mm\n', smiData.Solid(6).CoM)
+fprintf('MoI:  [%.2f, %.2f, %.2f] kg*mm^2\n', smiData.Solid(6).MoI)
+fprintf('PoI:  [%.4f, %.4f, %.4f] kg*mm^2\n', smiData.Solid(6).PoI)
+
+% List all mass
+fprintf('\n--- Mass of All Solids ---\n')
+for i = 1:12
+    fprintf('Solid(%2d) %-45s mass = %.2e kg\n', i, smiData.Solid(i).ID, smiData.Solid(i).mass)
+end
+
+
+%%%%%%%%%%check total mass and distribution
+% Load smiData from data file
+run('V1_5GimbalAssembly_DataFile.m')
+
+% Collect mass and CoM for all 12 Solids
+masses = zeros(1,12);
+coms   = zeros(12,3);
+for i = 1:12
+    masses(i) = smiData.Solid(i).mass;
+    com = smiData.Solid(i).CoM;
+    if i == 8  % Solid(8) CRM2413 uses SI units (m) — convert to mm
+        com = com * 1000;
+    end
+    coms(i,:) = com;
+end
+
+% Total mass
+m_total = sum(masses);
+fprintf('Total Mass: %.6f kg\n', m_total)
+
+% Weighted center of mass
+com_total = sum(masses' .* coms, 1) / m_total;
+fprintf('Approx CoM: [%.2f, %.2f, %.2f] mm\n', com_total)
+
+% Moments of inertia via parallel axis theorem (relative to total CoM)
+Ixx = 0; Iyy = 0; Izz = 0;
+for i = 1:12
+    moi = smiData.Solid(i).MoI;
+    if i == 8  % Solid(8) CRM2413 uses SI units (kg*m^2) — convert to kg*mm^2
+        moi = moi * 1e6;
+    end
+    dx = coms(i,1) - com_total(1);
+    dy = coms(i,2) - com_total(2);
+    dz = coms(i,3) - com_total(3);
+    Ixx = Ixx + moi(1) + masses(i)*(dy^2 + dz^2);
+    Iyy = Iyy + moi(2) + masses(i)*(dx^2 + dz^2);
+    Izz = Izz + moi(3) + masses(i)*(dx^2 + dy^2);
+end
+fprintf('Approx MoI: Ixx=%.2f  Iyy=%.2f  Izz=%.2f  kg*mm^2\n', Ixx, Iyy, Izz)
+fprintf('Approx MoI: Ixx=%.6f  Iyy=%.6f  Izz=%.6f  kg*m^2\n',  Ixx/1e6, Iyy/1e6, Izz/1e6)
+
+% Per-part mass summary
+fprintf('\n--- Mass of All Solids ---\n')
+for i = 1:12
+    fprintf('Solid(%2d) %-45s mass = %.2e kg\n', i, smiData.Solid(i).ID, smiData.Solid(i).mass)
+end
+
+
+
+
+check_simscape_inertia('V1_5GimbalAssembly_DataFile_v3.m')
+% 换任意模型：
+check_simscape_inertia('SomeOtherModel_DataFile.m')
