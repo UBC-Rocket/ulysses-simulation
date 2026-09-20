@@ -27,7 +27,7 @@ end
 % CAD component parameters
 model_datafile;
 
-% Reset PID Values
+% Reset PID values so that simulation can compile 
 Z.C.Kp = 1; Z.C.Ki = 0; Z.C.Kd = 0;
 Y.C.Kp = 1; Y.C.Ki = 0; Y.C.Kd = 0;
 X.C.Kp = 1; X.C.Ki = 0; X.C.Kd = 0;
